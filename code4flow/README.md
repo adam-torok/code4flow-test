@@ -6,4 +6,4 @@ Setting up the project:
 4. run command: 'npm install'
 5. run command: 'npm run dev' / 'npm watch dev'
 6. run command: 'php artisan migrate'
-7. run command: 'php artisan db:seed'
+7. run command: 'php artisan db:seed' --- seeds admin
