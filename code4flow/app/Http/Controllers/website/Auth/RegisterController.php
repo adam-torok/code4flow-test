@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\website\Auth;;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\website\RegistrateRequest;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -43,26 +44,10 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
-    }
+    public function register(RegistrateRequest $request)
+    {        
 
-    public function register(Request $request)
-    {
-        $this->validator($request->all(), $request)->validate();
-
-        $user = $this->create($request->all());
+        $user = $this->create($request->validated());
 
         $this->guard()->login($user);
 
@@ -83,15 +68,9 @@ class RegisterController extends Controller
             'city' => $data['city'],
             'county' => $data['county'],
             'zip' => $data['zip'],
-
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-    }
-
-    public function showFirstRegistrationForm()
-    {
-        return view('website.auth.first-step');
     }
 
     public function showRegistrationForm()

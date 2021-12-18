@@ -22,6 +22,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @stack('styles')
 </head>
 <body>
 
@@ -30,7 +31,6 @@
         <main class="py-4">
             @yield('content')
         </main>
-        @include('layouts.website.components.footer')
     </div>
 </body>
 </html>

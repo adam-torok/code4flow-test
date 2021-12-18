@@ -10,12 +10,9 @@
                     <h1 class="headline mb-3 animated bounceIn delay-2">
                         Kezdő költők klubbja <br>
                     </h1>
-                    <!--//headline-->
                     <div class="animated fadeIn  subheadline mb-4">
-
                         Éld ki kreativitásod &amp; szerezz hírnevet
                     </div>
-                    <!--//subheading-->
 
                     <div class="cta-holder row gx-md-3 gy-3 gy-md-0">
                         <div class="col-12 col-md-auto">
@@ -25,7 +22,6 @@
                             <a class="btn btn-secondary scrollto w-100" href="#benefits-section">Rólunk</a>
                         </div>
                     </div>
-                    <!--//cta-holder-->
 
                     <div class="hero-quotes mt-5">
                         <div id="quotes-carousel" class="quotes-carousel carousel slide carousel-fade mb-5"
@@ -41,69 +37,49 @@
                                     <blockquote class="quote p-4 theme-bg-light">
                                         "Végre kibírtam élni a kretavitásomat, és még hasznom is lett belőle"
                                     </blockquote>
-                                    <!--//item-->
                                     <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
                                         <div class="col-12 col-md-auto text-center text-md-start">
                                             <img class="source-profile" src="images/profiles/profile-1.png" alt="image">
                                         </div>
-                                        <!--//col-->
                                         <div class="col source-info text-center text-md-start">
                                             <div class="source-name">James Doe</div>
                                             <div class="soure-title">Co-Founder, Startup Week</div>
                                         </div>
-                                        <!--//col-->
                                     </div>
-                                    <!--//source-->
                                 </div>
-                                <!--//carousel-item-->
                                 <div class="carousel-item">
                                     <blockquote class="quote p-4 theme-bg-light">
                                         "Csak ajánlani bírom a kezdő költők klubbját, ennyien még nem olvasták a
                                         verseimet!"
                                     </blockquote>
-                                    <!--//item-->
                                     <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
                                         <div class="col-12 col-md-auto text-center text-md-start">
                                             <img class="source-profile" src="images/profiles/profile-2.png" alt="image">
                                         </div>
-                                        <!--//col-->
                                         <div class="col source-info text-center text-md-start">
                                             <div class="source-name">Jean Doe</div>
                                             <div class="soure-title">Co-Founder, Startup Week</div>
                                         </div>
-                                        <!--//col-->
                                     </div>
-                                    <!--//source-->
                                 </div>
-                                <!--//carousel-item-->
                                 <div class="carousel-item">
                                     <blockquote class="quote p-4 theme-bg-light">
                                         "Király! végre egy hely, ahol új költőtársaim szerezeményét is eltudom olvasni"
                                     </blockquote>
-                                    <!--//item-->
                                     <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
                                         <div class="col-12 col-md-auto text-center text-md-start">
                                             <img class="source-profile" src="images/profiles/profile-3.png" alt="image">
                                         </div>
-                                        <!--//col-->
                                         <div class="col source-info text-center text-md-start">
                                             <div class="source-name">Andy Doe</div>
                                             <div class="soure-title">Frontend Developer, Company Lorem</div>
                                         </div>
-                                        <!--//col-->
                                     </div>
-                                    <!--//source-->
                                 </div>
-                                <!--//carousel-item-->
                             </div>
-                            <!--//carousel-inner-->
                         </div>
-                        <!--//quotes-carousel-->
-
                     </div>
-                    <!--//hero-quotes-->
                 </div>
-                <!--//promo-->
             </div>
             <div class="col-12 col-md-5 mb-0 align-self-center">
                 <div class="book-cover-holder">

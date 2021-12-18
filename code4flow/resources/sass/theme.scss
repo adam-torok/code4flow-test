@@ -22,6 +22,10 @@ $single-col-max: 760px;
 $theme-color-tick: #7FCDB8;
 $theme-color-badge: #FCB822;
 
+.bg-main{
+	background-color: $theme-color-primary;
+}
+
 .form-control:focus {
 	border-color: #FCB822!important;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FCB822!important;
