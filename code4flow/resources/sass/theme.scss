@@ -26,6 +26,24 @@ $theme-color-badge: #FCB822;
 	background-color: $theme-color-primary;
 }
 
+.profile{
+	&__pills{
+		ul{
+			margin-bottom: 0;
+			list-style: none;
+			list-style-type: none;
+			li{
+				list-style: none;
+			}
+		}
+		a{
+			text-decoration: none;
+			font-weight: 800;
+			color:black;
+		}
+	}
+}
+
 .form-control:focus {
 	border-color: #FCB822!important;
 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FCB822!important;

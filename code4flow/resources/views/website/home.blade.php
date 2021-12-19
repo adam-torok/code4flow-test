@@ -10,10 +10,12 @@
                     <h1 class="headline mb-3 animated bounceIn delay-2">
                         Kezdő költők klubbja <br>
                     </h1>
+                    
                     <div class="animated fadeIn  subheadline mb-4">
                         Éld ki kreativitásod &amp; szerezz hírnevet
                     </div>
-
+                    
+                    @guest
                     <div class="cta-holder row gx-md-3 gy-3 gy-md-0">
                         <div class="col-12 col-md-auto">
                             <a class="btn btn-primary w-100" href="{{route('register')}}">Regisztráció</a>
@@ -22,6 +24,7 @@
                             <a class="btn btn-secondary scrollto w-100" href="#benefits-section">Rólunk</a>
                         </div>
                     </div>
+                    @endguest
 
                     <div class="hero-quotes mt-5">
                         <div id="quotes-carousel" class="quotes-carousel carousel slide carousel-fade mb-5"
@@ -42,8 +45,8 @@
                                             <img class="source-profile" src="images/profiles/profile-1.png" alt="image">
                                         </div>
                                         <div class="col source-info text-center text-md-start">
-                                            <div class="source-name">James Doe</div>
-                                            <div class="soure-title">Co-Founder, Startup Week</div>
+                                            <div class="source-name">Teszt Elek</div>
+                                            <div class="soure-title">Lelkes kezdő költő</div>
                                         </div>
                                     </div>
                                 </div>

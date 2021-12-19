@@ -11,12 +11,11 @@
     </style>
 @endpush
 @section('content')
-
-<div class="container h-full">
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card shadow-sm border-0">
-                <div class="card-header py-4 border-0">Jelentkezz be!</div>
+                <div class="card-header py-3 border-0">Jelentkezz be!</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

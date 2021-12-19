@@ -6,10 +6,14 @@ use App\Http\Controllers\website\Auth\LoginController;
 use App\Http\Controllers\website\Auth\RegisterController;
 use App\Http\Controllers\website\Auth\VerificationController;
 use App\Http\Controllers\website\HomeController;
+use App\Http\Controllers\website\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('landing');
+
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
+Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
 // Authentication Routes...
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');

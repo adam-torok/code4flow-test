@@ -1,0 +1,132 @@
+@extends('layouts.website.app')
+@push('styles')
+<style>
+    main {
+        background: #FCB822;
+    }
+</style>
+@endpush
+@section('content')
+
+<div class="row p-md-5 mt-md-5">
+    <div class="col-md-8 col-12 shadow-sm border-0 card p-5 offset-md-2">
+        @if ($errors->any())
+        <div class="alert alert-warning" role="alert">
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </div>
+        @endif
+
+        <div class="row text-center mb-4">
+            <div class="col-12">
+                <h1>{{Auth::user()->first_name}} {{Auth::user()->second_name}}</h1>
+            </div>
+            <div class="col-12">
+                <a href="/users">
+                    <a href="{{route('landing')}}" class="navbar-brand text-black"><i class="fa fa-book"></i>
+                        Költők<b>klubbja tag</b></a>
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 mb-4">
+                <div class="text-center">
+                    <img class="rounded-circle mb-2" src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                        alt="avatar">
+                </div>
+            </div>
+
+            <div class="col-12">
+                <form class="form" action="{{ route('profile.update') }}" method="POST">
+                    @csrf
+                    <div class="row">
+
+                        <h4>Személyes</h4>
+
+                        <div class="col-6">
+                            <label for="first_name"><b>Keresztnév</b></label>
+                            <input type="text" class="form-control" name="first_name" id="first_name"
+                                placeholder="Add meg a keresztnevedet" value="{{$user->first_name}}"
+                                title="Keresztneve">
+
+                            @error('first_name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-6">
+                            <label for="second_name"><b>Vezetéknév</b></label>
+                            <input type="text" class="form-control" name="second_name" id="second_name"
+                                placeholder="Add meg a vezetékneved is!" value="{{$user->second_name}}"
+                                title="Add meg a vezetékneved is!">
+
+                            @error('second_name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row mt-2">
+
+                        <h4>Lakhely</h4>
+
+
+                        <div class="col-4">
+                            <label for="city"><b>Város</b></label>
+                            <input type="text" class="form-control" name="city" id="city"
+                                placeholder="Add meg a városodat" value="{{$user->city}}" title="Add meg a városodat">
+
+                            @error('city')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-4">
+                            <label for="county"><b>Megye</b></label>
+                            <input type="text" class="form-control" name="county" id="county"
+                                placeholder="Add meg a megyédet" value="{{$user->county}}" title="Add meg a megyédet">
+
+                            @error('county')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-4">
+                            <label for="zip"><b>Irányítószám</b></label>
+                            <input type="text" class="form-control" name="zip" id="zip"
+                                placeholder="Add meg az irányítószámodat is" value="{{$user->zip}}"
+                                title="Add meg az irányítószámodat is">
+
+                            @error('zip')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+                    </div>
+
+
+                    <div class="form-group mt-4">
+                        <div class="col-xs-12 text-center ">
+                            <br>
+                            <button class="btn btn-primary" type="submit">Mentés</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

@@ -11,6 +11,9 @@
 			<a href="{{route('landing')}}" class="nav-item nav-link active">Főoldal</a>
 			<a href="#" class="nav-item nav-link">Rólunk</a>
 			<a href="#" class="nav-item nav-link">Versek</a>
+      @auth    
+			<a href="#" class="nav-item nav-link">Verseim</a>
+      @endauth
 		</div>
 	
     <div class="navbar-nav ml-auto">
@@ -30,19 +33,17 @@
         <li class="ml-auto d-flex nav-item dropdown">
           <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false" v-pre>
-            {{ Auth::user()->name }}
+            {{ Auth::user()->first_name }} {{Auth::user()->second_name }}
           </a>
 
           <a href="#" class="nav-item nav-link notifications"><i class="fa fa-bell-o"></i><span class="badge">1</span></a>
           <a href="#" class="nav-item nav-link messages"><i class="fa fa-envelope-o"></i><span class="badge">10</span></a></a>
     
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <a href="#" class="dropdown-item"><i class="fa fa-user-o"></i> Profile</a></a>
-            <a href="#" class="dropdown-item"><i class="fa fa-calendar-o"></i> Calendar</a></a>
-            <a href="#" class="dropdown-item"><i class="fa fa-sliders"></i> Settings</a></a>
+            <a href="{{route('profile')}}" class="dropdown-item"><i class="fa fa-user-o"></i> Profil</a></a>
             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-              {{ __('Logout') }}
+                                    document.getElementById('logout-form').submit();">
+              Kilépés
             </a>
     
             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
