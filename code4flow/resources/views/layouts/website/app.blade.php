@@ -19,16 +19,18 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     @stack('styles')
+    @stack('scripts')
 </head>
 <body>
 
     <div id="app">
         @include('layouts.website.components.navbar')
-        <main class="py-4">
+        <main class="pt-4">
             @yield('content')
         </main>
     </div>

@@ -6,14 +6,24 @@ use App\Http\Controllers\website\Auth\LoginController;
 use App\Http\Controllers\website\Auth\RegisterController;
 use App\Http\Controllers\website\Auth\VerificationController;
 use App\Http\Controllers\website\HomeController;
+use App\Http\Controllers\website\PoemController;
 use App\Http\Controllers\website\ProfileController;
+use App\Http\Controllers\website\ReportController;
 use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('landing');
 
-Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
+Route::get('/poems', [HomeController::class, 'poems'])->name('poems');
+Route::resource('user-poems', PoemController::class);
+Route::resource('reports', ReportController::class);
+
+// Notification center routes
+
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
+Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile.show');
+Route::delete('/profile/delete', [ProfileController::class, 'delete'])->name('profile.delete');
 
 // Authentication Routes...
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');

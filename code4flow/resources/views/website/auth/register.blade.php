@@ -1,11 +1,5 @@
 @extends('layouts.website.app')
-@push('styles')
-    <style>
-        body{
-            background: #FCB822;
-        }
-    </style>
-@endpush
+
 @section('content')
 <div class="container pt-4 mt-4">
     <div class="row justify-content-center">

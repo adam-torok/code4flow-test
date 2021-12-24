@@ -29,8 +29,6 @@
             </div>
 
             <div class="col-12">
-                <form class="form" action="{{ route('profile.update') }}" method="POST">
-                    @csrf
                     <div class="row">
 
                         <h4>Személyes</h4>
@@ -75,7 +73,6 @@
                     <hr>
 
                     <div class="row mt-2">
-
                         <h4>Lakhely</h4>
 
                         <div class="col-4">
@@ -132,24 +129,6 @@
                         </div>
                     </div>
 
-
-                    <div class="form-group mt-4">
-                        <div class="col-xs-12 text-center ">
-                            <br>
-                            <button class="btn btn-dark" type="submit">Mentés</button>
-                        </div>
-                    </div>
-                </form>
-
-                <form action="{{route('profile.delete')}}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <div class="form-group mt-4">
-                        <div class="col-xs-12 text-center ">
-                            <button class="btn btn-danger" type="submit">Profil teljeskörű törlése</button>
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </div>

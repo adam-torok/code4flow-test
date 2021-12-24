@@ -86,7 +86,6 @@
             </div>
             <div class="col-12 col-md-5 mb-0 align-self-center">
                 <div class="book-cover-holder">
-                    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
                     <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_yjrdpceb.json"
                         background="transparent" speed="1.5" style="width: 100%; height: auto;" loop autoplay>
                     </lottie-player>

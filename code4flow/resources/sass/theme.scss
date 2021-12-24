@@ -1,6 +1,6 @@
 /*************************** Theme Colours****************************/
 // Define theme colour scheme
-$theme-color-primary: #FCB822;
+$theme-color-primary: #212529;
 
 $theme-text-color-primary: #1c1e2e;
 $theme-text-color-secondary: lighten($theme-text-color-primary, 25%);
@@ -10,7 +10,7 @@ $theme-bg-light: #f6f8fc;
 $theme-bg-primary: $theme-color-primary;
 $theme-bg-dark: $theme-text-color-primary;
 
-$theme-border-color:  #efefef;
+$theme-border-color: #efefef;
 $theme-divider-color: #efefef;
 
 $theme-divider: lighten($theme-text-color-primary, 75%);
@@ -19,173 +19,265 @@ $smoky-white: #f5f5f5;
 
 $single-col-max: 760px;
 
-$theme-color-tick: #7FCDB8;
-$theme-color-badge: #FCB822;
+$theme-color-tick: #7fcdb8;
+$theme-color-badge: #212529;
 
-.bg-main{
-	background-color: $theme-color-primary;
+.bg-main {
+    background-color: $theme-color-primary;
 }
 
-.profile{
-	&__pills{
-		ul{
-			margin-bottom: 0;
-			list-style: none;
-			list-style-type: none;
-			li{
-				list-style: none;
-			}
-		}
-		a{
-			text-decoration: none;
-			font-weight: 800;
-			color:black;
-		}
-	}
+hr{
+    color:#bfbfbf!important;
+}
+
+/* common */
+.ribbon {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.ribbon-green span{
+	background-color:  green!important;
+}
+
+
+.ribbon-yellow span{
+	background-color:  #212529!important;
+}
+
+.ribbon-red span{
+	background-color:  rgb(165, 30, 30)!important;
+}
+.ribbon::before,
+.ribbon::after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    display: block;
+    border: 5px solid black;
+}
+.ribbon span {
+    position: absolute;
+    display: block;
+    width: 225px;
+    padding: 15px 0;
+    background-color: #3e3e3e;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font: 700 18px/1 "Lato", sans-serif;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    text-transform: uppercase;
+    text-align: center;
+}
+.ribbon-top-right {
+    top: -10px;
+    right: -10px;
+}
+.ribbon-top-right::before,
+.ribbon-top-right::after {
+    border-top-color: transparent;
+    border-right-color: transparent;
+}
+.ribbon-top-right::before {
+    top: 0;
+    left: 0;
+}
+.ribbon-top-right::after {
+    bottom: 0;
+    right: 0;
+}
+.ribbon-top-right span {
+    left: -25px;
+    top: 30px;
+    transform: rotate(45deg);
+}
+
+.custom-bg {
+    background: #3e3e3e;
+    color: white !important;
+}
+
+.poem__card {
+    transition: all 0.5s ease-in-out;
+}
+
+.poem__card:hover {
+    transform: scale(1.1);
+    background: #212529;
+    cursor: pointer;
+}
+
+.profile {
+    &__pills {
+        ul {
+            margin-bottom: 0;
+            list-style: none;
+            list-style-type: none;
+            li {
+                list-style: none;
+            }
+        }
+        a {
+            text-decoration: none;
+            font-weight: 800;
+            color: black;
+        }
+    }
 }
 
 .form-control:focus {
-	border-color: #FCB822!important;
-	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #FCB822!important;
+    border-color: #212529 !important;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #212529 !important;
 }
 
-.form-control{
-	height: 45px!important;
+.form-control {
+    height: 45px !important;
 }
 
 .checkmark {
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 25px;
-	width: 25px;
-	background-color: #eee;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
 }
-
 
 .form-inline {
-	display: inline-block;
+    display: inline-block;
 }
 .navbar-header.col {
-	padding: 0 !important;
+    padding: 0 !important;
 }
-.navbar {		
-	background: #fff;
-	padding-left: 16px;
-	padding-right: 16px;
-	border-bottom: 1px solid #d6d6d6;
-	box-shadow: 0 0 4px rgba(0,0,0,.1);
+
+.navbar {
+    background: #fff;
+    padding-left: 16px;
+    padding-right: 16px;
+    border-bottom: 1px solid #d6d6d6;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 }
 .nav-link img {
-	border-radius: 50%;
-	width: 36px;
-	height: 36px;
-	margin: -8px 0;
-	float: left;
-	margin-right: 10px;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    margin: -8px 0;
+    float: left;
+    margin-right: 10px;
 }
 .navbar .navbar-brand {
-	color: #555;
-	padding-left: 0;
-	padding-right: 50px;
-	font-family: 'Merienda One', sans-serif;
+    color: #555;
+    padding-left: 0;
+    padding-right: 50px;
+    font-family: "Merienda One", sans-serif;
 }
 .navbar .navbar-brand i {
-	font-size: 20px;
-	margin-right: 5px;
+    font-size: 20px;
+    margin-right: 5px;
 }
 .search-box {
-	position: relative;
-}	
+    position: relative;
+}
 .search-box input {
-	box-shadow: none;
-	padding-right: 35px;
-	border-radius: 3px !important;
+    box-shadow: none;
+    padding-right: 35px;
+    border-radius: 3px !important;
 }
 .search-box .input-group-addon {
-	min-width: 35px;
-	border: none;
-	background: transparent;
-	position: absolute;
-	right: 0;
-	z-index: 9;
-	padding: 7px;
-	height: 100%;
+    min-width: 35px;
+    border: none;
+    background: transparent;
+    position: absolute;
+    right: 0;
+    z-index: 9;
+    padding: 7px;
+    height: 100%;
 }
 .search-box i {
-	color: #a0a5b1;
-	font-size: 19px;
+    color: #a0a5b1;
+    font-size: 19px;
 }
 .navbar .nav-item i {
-	font-size: 18px;
+    font-size: 18px;
 }
 .navbar .dropdown-item i {
-	font-size: 16px;
-	min-width: 22px;
+    font-size: 16px;
+    min-width: 22px;
 }
 .navbar .nav-item.open > a {
-	background: none !important;
+    background: none !important;
 }
 .navbar .dropdown-menu {
-	border-radius: 1px;
-	border-color: #e5e5e5;
-	box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    border-radius: 1px;
+    border-color: #e5e5e5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: black!important;
+    font-weight: 500!important;
 }
 .navbar .dropdown-menu a {
-	color: #777;
-	padding: 8px 20px;
-	line-height: normal;
+    color: black;
+    padding: 8px 20px;
+    line-height: normal;
 }
-.navbar .dropdown-menu a:hover, .navbar .dropdown-menu a:active {
-	color: #333;
-}	
+.navbar .dropdown-menu a:hover,
+.navbar .dropdown-menu a:active {
+    color: #333;
+}
 .navbar .dropdown-item .material-icons {
-	font-size: 21px;
-	line-height: 16px;
-	vertical-align: middle;
-	margin-top: -2px;
+    font-size: 21px;
+    line-height: 16px;
+    vertical-align: middle;
+    margin-top: -2px;
 }
 .navbar .badge {
-	color: #fff;
-	background: #f44336;
-	font-size: 11px;
-	border-radius: 20px;
-	position: absolute;
-	min-width: 10px;
-	padding: 4px 6px 0;
-	min-height: 18px;
-	top: 5px;
+    color: #fff;
+    background: #f44336;
+    font-size: 11px;
+    border-radius: 20px;
+    position: absolute;
+    min-width: 10px;
+    padding: 4px 6px 0;
+    min-height: 18px;
+    top: 5px;
 }
-.navbar a.notifications, .navbar a.messages {
-	position: relative;
-	margin-right: 10px;
+.navbar a.notifications,
+.navbar a.messages {
+    position: relative;
+    margin-right: 10px;
 }
 .navbar a.messages {
-	margin-right: 20px;
+    margin-right: 20px;
 }
 .navbar a.notifications .badge {
-	margin-left: -8px;
+    margin-left: -8px;
 }
 .navbar a.messages .badge {
-	margin-left: -4px;
-}	
-.navbar .active a, .navbar .active a:hover, .navbar .active a:focus {
-	background: transparent !important;
+    margin-left: -4px;
 }
-@media (min-width: 1200px){
-	.form-inline .input-group {
-		width: 300px;
-		margin-left: 30px;
-	}
+.navbar .active a,
+.navbar .active a:hover,
+.navbar .active a:focus {
+    background: transparent !important;
 }
-@media (max-width: 1199px){
-	.form-inline {
-		display: block;
-		margin-bottom: 10px;
-	}
-	.input-group {
-		width: 100%;
-	}
+@media (min-width: 1200px) {
+    .form-inline .input-group {
+        width: 300px;
+        margin-left: 30px;
+    }
+}
+@media (max-width: 1199px) {
+    .form-inline {
+        display: block;
+        margin-bottom: 10px;
+    }
+    .input-group {
+        width: 100%;
+    }
 }
 /*************************** Variables Section. *****************************/
 // Create variables to override the default value for variables used in the Bootstrap SCSS files.
@@ -200,7 +292,6 @@ $gray-700: lighten($theme-text-color-secondary, 20%);
 $gray-800: lighten($theme-text-color-secondary, 10%);
 $gray-900: $theme-text-color-primary;
 
-
 /* Override BS5 sass color */
 $primary: $theme-color-primary;
 $secondary: $theme-text-color-secondary;
@@ -208,7 +299,9 @@ $secondary: $theme-text-color-secondary;
 /*************************** Import Bootstrap  *****************************/
 @import "bootstrap/scss/bootstrap.scss";
 
-
 /*************************** Theme Styles Section ****************************/
-@import "theme/styles.scss"
+@import "theme/styles.scss";
 
+textarea {
+    min-height: auto !important;
+}

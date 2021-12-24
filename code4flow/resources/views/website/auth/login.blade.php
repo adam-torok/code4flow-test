@@ -2,7 +2,6 @@
 @push('styles')
     <style>
         main{
-            background: #FCB822;
             height: 100vh;
             display: flex;
             justify-content: center;
