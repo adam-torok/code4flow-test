@@ -15,6 +15,8 @@
                         Költők<b>klubbja tag már <span class="bg-black p-2 px-3 badge badge-light">{{$user->created_at->diffForHumans()}}</span></b>
                     </a>
                 </a>
+                <br>
+                <p class="mt-2">Utolsó módosítás dátuma: {{$user->updated_at}}</p>
             </div>
         </div>
 

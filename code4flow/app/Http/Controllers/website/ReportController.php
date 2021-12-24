@@ -38,7 +38,8 @@ class ReportController extends Controller
         $report = new Report($request->all());
         $report->user_id = Auth::user()->id;
         $report->save();
-        return redirect()->route('reports.index')->with('success', 'Sikeres bejelentés!');
+        toast()->success('Sikeres bejelentés!', 'Bejelentést követően felülvizsgáljuk esetedet, és minnél előbb kijavítjuk a bejelentett hibát!');
+        return redirect()->route('reports.index');
     }
 
     /**
@@ -70,10 +71,12 @@ class ReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreReportRequest $request, Report $report)
+    public function update(StoreReportRequest $request, $id)
     {
+        $report = Report::findOrFail($id);
         $report->fill($request->all());
         $report->save();
+        toast()->success('Sikeres bejelentés frissítés!', 'Bejelentésedet sikeresen frissítetted!');
         return view('website.reports.edit',compact('report'));
     }
 
@@ -83,9 +86,11 @@ class ReportController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Report $report)
+    public function destroy($id)
     {
+        $report = Report::findOrFail($id);
         $report->delete();
-        return redirect()->route('reports.index')->with('success', 'Sikeres törlés');
+        toast()->success('Sikeresen törölted a bejelentésedet!');
+        return redirect()->route('reports.index');
     }
 }

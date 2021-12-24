@@ -8,6 +8,7 @@ use App\Http\Requests\website\UpdatePoemRequest;
 use App\Models\Category;
 use App\Models\Poem;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\ToSweetAlert;
 
 class PoemController extends Controller
 {
@@ -45,18 +46,8 @@ class PoemController extends Controller
         $poem->user_id = Auth::user()->id;
         $poem->category_id = $request->category;
         $poem->save();
-        return redirect()->route('user-poems.index')->with('success', 'Sikeres adatmodositas');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        
+        toast()->success('Sikeresen beküldted a versedet!','Már csak azt kell megvárnod, hogy adminisztrátorunk engedélyezze a publikus megjelenést');
+        return redirect()->route('user-poems.index');
     }
 
     /**
@@ -79,10 +70,14 @@ class PoemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePoemRequest $request, Poem $poem)
+    public function update(UpdatePoemRequest $request, $id)
     {
+        $poem = Poem::findOrFail($id);
         $poem->fill($request->all());
-        return redirect()->route('user-poems.edit',$poem->id)->with('success', 'Sikeres adatmodositas');
+        $poem->category_id = $request->category;
+        $poem->save();
+        toast()->success('Sikeresen módosítottad a versedet!');
+        return redirect()->route('user-poems.edit',$poem->id);
     }
 
     /**
@@ -91,9 +86,11 @@ class PoemController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Poem $poem)
+    public function destroy($id)
     {
+        $poem = Poem::findOrFail($id);
         $poem->delete();
-        return redirect()->route('user-poems.index')->with('success', 'Sikeres törlés');
+        toast()->success('Sikeresen törölted a versedet!');
+        return redirect()->route('user-poems.index');
     }
 }

@@ -24,8 +24,9 @@
             <div class="row mt-4">
 
                 <div class="col-12">
-                    <form class="form" action="{{ route('reports.update', $report->id) }}" method="PATCH">
+                    <form class="form" action="{{ route('reports.update', $report->id) }}" method="POST">
                         @csrf
+                        @method('PATCH')
                         <div class="row">
 
                             <div class="col-12 col-md-12">
@@ -67,7 +68,7 @@
                         </div>
                     </form>
 
-                    <form action="{{route('reports.destroy', $report)}}">
+                    <form action="{{route('reports.destroy', $report->id)}}">
                         @csrf
                         @method('DELETE')
                         <div class="mt-4 col-xs-12 text-center">

@@ -5,10 +5,10 @@ namespace App\Http\Controllers\website;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\website\UpdateProfileRequest;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\ToSweetAlert;
 
-class ProfileController extends Controller
+class ProfileController extends Controller 
 {
     public function index(){
         $user = Auth::user();
@@ -20,10 +20,12 @@ class ProfileController extends Controller
         $user->first_name = $request->first_name;
         $user->second_name = $request->second_name;
         $user->save();
-        return redirect()->route('profile')->with('success', 'Sikeres adatmodositas');
+        toast()->success('Sikeres profilmódosítás','Sikeresen módosítottad a profilodat!');
+        return redirect()->route('profile');
     }
 
-    public function show(User $user){
+    public function show($id){
+        $user = User::findOrFail($id);
         return view('website.profile.show', compact('user'));
     }
 
@@ -32,6 +34,7 @@ class ProfileController extends Controller
         $user->poems()->delete();
         $user->delete();
         Auth::logout();
-        return redirect()->route('landing')->with('success', 'Sikeres fióktörlés');
+        alert()->info('Sikeres profil törlés','Sikeresen törölted a profilodat!');
+        return redirect()->route('landing');
     }
 }

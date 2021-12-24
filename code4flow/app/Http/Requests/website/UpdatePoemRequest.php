@@ -26,12 +26,13 @@ class UpdatePoemRequest extends FormRequest
         return [
             'category' => 'required',
             'text' => 'required|min:30',
-            'title' => 'required|unique:poems',
+            'title' => 'required',
         ];
     }
 
     public function attributes(){
         return [
+            'category' => 'Kategória',
             'title' => 'Cím',
             'text' => 'Versszöveg'
         ];

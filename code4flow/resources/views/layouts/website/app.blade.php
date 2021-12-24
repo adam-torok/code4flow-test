@@ -31,6 +31,7 @@
     <div id="app">
         @include('layouts.website.components.navbar')
         <main class="pt-4">
+            @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
             @yield('content')
         </main>
     </div>

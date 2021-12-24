@@ -27,7 +27,7 @@
                                         <img class="source-profile" src="images/profiles/profile-2.png" alt="image">
                                     </div>
                                     <div class="col source-info text-center text-md-start">
-                                        <div class="source-name"><a class="text-dark" href="{{route('profile.show',$poem->user)}}">{{$poem->user->getName()}}</a></div>
+                                        <div class="source-name"><a class="text-dark" href="{{route('profile.show',$poem->user->id)}}">{{$poem->user->getName()}}</a></div>
                                         <div class="soure-title">Könyv kritikus</div>
                                     </div>
                                 </div>

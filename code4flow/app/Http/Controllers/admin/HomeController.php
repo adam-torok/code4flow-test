@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Poem;
+use App\Models\Report;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -19,6 +22,9 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('admin.home');
+        $users = User::all();
+        $poems = Poem::all();
+        $reports = Report::all();
+        return view('admin.home', compact('users', 'poems', 'reports'));
     }
 }

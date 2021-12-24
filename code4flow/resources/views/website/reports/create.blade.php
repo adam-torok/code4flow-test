@@ -27,9 +27,10 @@
                                     name="title"
                                     id="title"
                                     placeholder="Probléma"
+                                    value="{{old('title')}}"
                                     title="Probléma">
 
-                                @error('first_name')
+                                @error('title')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -40,8 +41,15 @@
                         <div class="row mt-4">
                             <div class="col-12">
                                 <label for="text"><b>Probléma leírása *</b></label>
-                                <textarea style="height: auto!important" name="text" rows="5" class="form-control" id="content"></textarea>
-                                @error('content')
+                                <textarea 
+                                    style="height: auto!important" 
+                                    name="text" 
+                                    rows="5" 
+                                    class="form-control @error('text') is-invalid @enderror" 
+                                    id="text">
+                                    {{old('text')}}
+                                </textarea>
+                                @error('text')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

@@ -41,6 +41,7 @@
                                     name="title"
                                     id="title"
                                     placeholder="Vers címe"
+                                    value="{{ old('title') }}"
                                     title="Vers címe">
 
                                 @error('title')
@@ -72,8 +73,13 @@
                         <div class="row mt-4">
                             <div class="col-12">
                                 <label for="text"><b>Vers szövege *</b></label>
-                                <textarea name="text" id="content"></textarea>
-                                @error('content')
+                                <textarea 
+                                    name="text" 
+                                    class="@error('text') is-invalid @enderror"
+                                    id="content">
+                                    {{ old('text') }}
+                                </textarea>
+                                @error('text')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

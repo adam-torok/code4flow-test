@@ -23,6 +23,8 @@
                 <div>
                     <h1>Vers szerkesztése</h1>
                     <small>Az adminisztrátor jóváhagyását követően megjelenik a verseskötetben</small>
+                    <br>
+                    <small>Utolsó modosításod dátuma: {{$poem->updated_at}}</small>
                 </div>
             </div>
 
@@ -38,14 +40,14 @@
                                 <label for="title"><b>Cím *</b></label>
                                 <input 
                                     type="text"
-                                    class="form-control"
+                                    class="form-control @error('title') is-invalid @enderror"
                                     name="title"
                                     id="title"
                                     placeholder="Vers címe"
                                     value="{{$poem->title}}"
                                     title="Vers címe">
 
-                                @error('first_name')
+                                @error('title')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
@@ -55,12 +57,12 @@
                             <div class="col-12 col-md-6">
                                 <label for="category"><b>Vers kategóriája *</b></label>
                                 <select 
-                                    class="form-control @error('title') is-invalid @enderror"
+                                    class="form-control @error('category') is-invalid @enderror"
                                     name="category"
                                     id="category"
                                     title="Vers kategóriája">
                                     @foreach ($categories as $category)
-                                    <option @if($category == $poem->category->name) selected @endif value="{{$category->id}}">{{$category->name}}</option>
+                                    <option @if($category->id == $poem->category->id) selected @endif value="{{$category->id}}">{{$category->name}}</option>
                                     @endforeach
                                 </select>
                                 @error('category')
@@ -74,8 +76,11 @@
                         <div class="row mt-4">
                             <div class="col-12">
                                 <label for="text"><b>Vers szövege *</b></label>
-                                <textarea name="text" id="content">{{$poem->text}}</textarea>
-                                @error('content')
+                                <textarea 
+                                    name="text" 
+                                    id="content">{{$poem->text}}
+                                </textarea>
+                                @error('text')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

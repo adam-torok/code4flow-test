@@ -45,14 +45,6 @@
 
 <div class="row p-md-5 mt-md-5">
     <div class="col-md-8 col-12 shadow-sm border-0 card p-5 offset-md-2">
-        @if ($errors->any())
-        <div class="alert alert-warning" role="alert">
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-        </div>
-        @endif
-
 
         <div class="row text-center mb-4">
             <div class="d-flex mb-4 justify-content-between">

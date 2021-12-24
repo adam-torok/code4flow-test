@@ -35,7 +35,7 @@
                                 @endif
                                 <h2 class="text-center">{{$poem->title}}</h2>
                                 </blockquote>
-                                <p><b>{!! Str::limit($poem->text) !!}</b></p>
+                                <p style="overflow: hidden" class="w-100"><b>{!! Str::limit($poem->text) !!}</b></p>
                                 <hr>
                                 <small>Kategória: {{$poem->category->name}}</small>
                                 <hr>
@@ -45,7 +45,7 @@
                                         <form class="d-flex" method="POST" action="{{route('user-poems.destroy',$poem)}}">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn btn-sm" href="">Törlés</button>
+                                            <button class="btn btn-sm">Törlés</button>
                                         </form>
                                     </div>
                                 </div>
