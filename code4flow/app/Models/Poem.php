@@ -81,4 +81,8 @@ class Poem extends Model
     public function getSubmittedDate(){
         return $this->created_at->diffForHumans();
     }
+
+    public function getModificationDate(){
+        return $this->updated_at->diffForHumans();
+    }
 }

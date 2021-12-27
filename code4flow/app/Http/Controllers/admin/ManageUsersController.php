@@ -30,7 +30,6 @@ class ManageUsersController extends Controller
     {
         $user = User::findOrFail($id);
         return view('admin.users.show',compact('user'));
-
     }
 
     /**
@@ -55,8 +54,8 @@ class ManageUsersController extends Controller
     public function update(UpdateUserRequest $request, $id)
     {
         $user = User::findOrFail($id);
-        $user->first_name = $request->first_name;
-        $user->second_name = $request->second_name;
+        $user->fill($request->all());
+        //$user->is_disabled = $request->is_disabled;
         $user->save();
         alert()->success('Sikeresen szerkesztetted '. $user->second_name . ' profilját');
         return redirect()->route('admin:users.show',$id);

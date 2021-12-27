@@ -21,6 +21,9 @@ class User extends Authenticatable
         'city',
         'second_name',
         'first_name',
+        'title',
+        'education',
+        'note',
         'password',
     ];
 
@@ -51,5 +54,9 @@ class User extends Authenticatable
 
     public function getVerificationDate(){
         return $this->verified_at->diffForHumans();
+    }
+
+    public function getModificationDate(){
+        return $this->updated_at->diffForHumans();
     }
 }

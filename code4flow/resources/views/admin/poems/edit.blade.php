@@ -101,10 +101,11 @@
                 </div>
             </div>
 
+            <small class="text-muted"><b>Utolsó módosítás dátuma {{$poem->getModificationDate()}}</b></small>
+
             <div class="col-12 mt-4 d-flex justify-content-between">
                 <button class="btn btn-primary" type="submit">Mentés</button>
             </div>
-
         </form>
 
         <form id="delete-form" method="POST" action="{{route('admin:poems.destroy', $poem->id)}}">

@@ -72,6 +72,62 @@
                             </span>
                             @enderror
                         </div>
+
+                        <div class="col-6 mt-2">
+                            <label for="title"><b>Titulus</b></label>
+                            <input 
+                                type="text" 
+                                class="form-control @error('title') is-invalid @enderror" 
+                                name="title" 
+                                id="title"
+                                placeholder="Add meg a képzeletbeli titulosodat" 
+                                value="{{$user->title}}"
+                                title="Titulus">
+
+                            @error('title')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-6 mt-2">
+                            <label for="education"><b>Tanulmányok</b></label>
+                            <input 
+                                type="text" 
+                                class="form-control @error('education') is-invalid @enderror" 
+                                name="education" 
+                                id="education"
+                                placeholder="Merre jártál iskolába?" 
+                                value="{{$user->education}}"
+                                title="Merre jártál iskolába?">
+
+                            @error('education')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
+
+                        <div class="col-12 mt-2">
+                            <label for="note"><b>Pár szó rólad és munkásságádoról</b></label>
+                            <textarea 
+                                style="height: auto!important"
+                                type="text" 
+                                class="form-control @error('note') is-invalid @enderror" 
+                                name="note" 
+                                id="note"
+                                rows="3"
+                                title="Note">
+                                {{$user->note}}
+                            </textarea>
+
+                            @error('note')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+                        </div>
                     </div>
 
                     <hr>

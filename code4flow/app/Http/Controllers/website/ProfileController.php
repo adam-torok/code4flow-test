@@ -17,8 +17,7 @@ class ProfileController extends Controller
 
     public function update(UpdateProfileRequest $request){
         $user = Auth::user();
-        $user->first_name = $request->first_name;
-        $user->second_name = $request->second_name;
+        $user->fill($request->all());
         $user->save();
         toast()->success('Sikeres profilmódosítás','Sikeresen módosítottad a profilodat!');
         return redirect()->route('profile');

@@ -28,7 +28,7 @@
                     @foreach ($newPoems as $poem)
                     <li class="item">
                         <div class="product-info ml-2">
-                            <a href="{{route('admin:poems.show',$poem->id)}}" class="product-title ml-0">
+                            <a href="{{route('admin:poems.edit',$poem->id)}}" class="product-title ml-0">
                                 {{$poem->title}}
                             </a>
                                 {!!$poem->getStatusTemplated()!!}

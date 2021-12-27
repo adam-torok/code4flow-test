@@ -65,7 +65,8 @@
                     </tr>
                     <tr>
                         <td>Email megerősítve</td>
-                        <td>@if($user->email_verified_at)
+                        <td>
+                            @if($user->email_verified_at)
                                 {{ $user->email_verified_at->format('Y.m.d') }}
                             @else
                                 - 
@@ -75,6 +76,54 @@
                     <tr>
                         <td>Regisztrált</td>
                         <td>{{ $user->created_at->format('Y.m.d H:i') }}</td>
+                    </tr>
+                    <tr>
+                        <td>Titulus</td>
+                        <td>
+                            <input 
+                                class="form-control @error('title') is-invalid @enderror"
+                                name="title"
+                                type="text" 
+                                value="{{$user->title}}">
+
+                                @error('title')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tanulmányok</td>
+                        <td>
+                            <input 
+                                class="form-control @error('education') is-invalid @enderror"
+                                name="education"
+                                type="text" 
+                                value="{{$user->education}}">
+
+                                @error('education')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Rövid leírás</td>
+                        <td>
+                            <input 
+                                class="form-control @error('note') is-invalid @enderror"
+                                name="note"
+                                type="text" 
+                                value="{{$user->note}}">
+
+                                @error('notes')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                        </td>
                     </tr>
                     <tr>
                         <td>Megye</td>
@@ -127,7 +176,9 @@
                     </tbody>
                 </table>
 
-                <div class="col-12 d-flex justify-content-between">
+                <small class="text-muted"><b>Utolsó módosítás dátuma {{$user->getModificationDate()}}</b></small>
+
+                <div class="col-12 mt-4 d-flex justify-content-between">
                     <button class="btn btn-primary" type="submit">Mentés</button>
                 </div>
 

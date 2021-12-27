@@ -5,7 +5,7 @@
 
 @section('content_header')
 <div class="col-12 row">
-    <h1>Felhasználók kezelése</h1>
+    <h1>{{$user->getName()}} összegzése</h1>
     <a class="btn btn-primary ml-auto" href="{{route('admin:users.edit', $user)}}">Felhasználó szerkesztése</a>
 </div>
 @stop
@@ -35,14 +35,24 @@
                         <h3 class="card-title">Leírások</h3>
                     </div>
                     <div class="card-body">
-                        <strong><i class="fas fa-book mr-1"></i> Tanulmányok</strong>
-
-                        <p class="text-muted">
-                            B.S. in Computer Science from the University of Tennessee at Knoxville
-                        </p>
-                        <hr>
-                        <strong><i class="fas fa-map-marker-alt mr-1"></i> Leírás</strong>
-                        <p class="text-muted">Malibu, California</p>
+                        
+                            <strong><i class="fas fa-book mr-1"></i> Tanulmányok</strong>
+                            <p class="text-muted">
+                                @if($user->education)
+                                    {{$user->education}}
+                                @else 
+                                    - Nincs adat
+                                @endif
+                            </p>
+                            <hr>
+                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Leírás</strong>
+                            <p class="text-muted"> 
+                                @if($user->note)
+                                    {{$user->note}}
+                                @else 
+                                    - Nincs adat
+                                @endif
+                            </p>
                     </div>
                 </div>
             </div>
@@ -65,12 +75,42 @@
                                 </tr>
                                 <tr>
                                     <td>Email megerősítve</td>
-                                    <td>@if($user->email_verified_at) {{ $user->getVerificationDate() }}
-                                        @else - @endif</td>
+                                    <td>@if($user->email_verified_at)
+                                            {{ $user->getVerificationDate() }}
+                                        @else
+                                            - 
+                                        @endif</td>
                                 </tr>
                                 <tr>
                                     <td>Regisztrált</td>
                                     <td>{{ $user->created_at->format('Y.m.d H:i') }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Tanulmányok</td>
+                                    <td>@if($user->education) 
+                                            {{ $user->udecation }}
+                                        @else
+                                            - 
+                                        @endif
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Titulus</td>
+                                    <td>@if($user->title) 
+                                            {{ $user->title }}
+                                        @else
+                                            - 
+                                        @endif
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Bemutatkozószöveg</td>
+                                    <td>@if($user->note) 
+                                            {{ $user->note }}
+                                        @else
+                                            - 
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>Megye</td>

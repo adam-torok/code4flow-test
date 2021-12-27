@@ -90,7 +90,7 @@
                         background="transparent" speed="1.5" style="width: 100%; height: auto;" loop autoplay>
                     </lottie-player>
                     <div class="animated bounceIn book-badge d-inline-block shadow">
-                        ADJ<br>ÖTLETET
+                        ÍRJ<br>VERSET
                     </div>
                 </div>
                 <div class="text-center"><a class="mt-4 pt-4 theme-link scrollto" href="#reviews-section">Nézze meg
@@ -102,9 +102,12 @@
 
 <section id="benefits-section" class="benefits-section theme-bg-light-gradient py-5">
     <div class="container py-5">
+        @guest
         <h2 class="section-heading text-center mb-3 animated bounceIn">Miért regisztrálj?</h2>
-        <div class="section-intro single-col-max mx-auto text-center mb-5">Felsoroljuk neked, miket tudunk nyújtani
+        <div class="section-intro single-col-max mx-auto text-center mb-5">
+            Felsoroljuk neked, miket tudunk nyújtani
         </div>
+        @endguest
         <div class="row text-center">
             <div class="item col-12 col-md-6 col-lg-4">
                 <div data-aos="fade-up-right" class="item-inner p-3 p-lg-4">
@@ -275,9 +278,11 @@
                 </div>
             </div>
         </div>
+        @guest
         <div class="text-center">
             <a class="btn btn-primary" href="{{route('register')}}">Regisztrálok</a>
         </div>
+        @endguest
     </div>
 </section>
 

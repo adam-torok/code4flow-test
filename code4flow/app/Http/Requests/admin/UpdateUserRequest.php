@@ -29,6 +29,17 @@ class UpdateUserRequest extends FormRequest
             'city' => 'required|string|max:50',
             'county' => 'required|string|max:50',
             'zip' => 'required|numeric',
+            'title' => 'string|nullable|max:30',
+            'education' => 'string|nullable|max:100',
+            'note' => 'string|nullable|max:200'
+        ];
+    }
+
+    public function attributes(){
+        return [
+            'title' => 'Titulus',
+            'education' => 'Tanulmányok',
+            'note' => 'Bemutató szöveg'
         ];
     }
 }
