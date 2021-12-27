@@ -1,6 +1,7 @@
 @extends('layouts.website.app')
 @push('scripts')
-<script src="//cdn.ckeditor.com/4.17.1/basic/ckeditor.js"></script>@endpush
+<script src="//cdn.ckeditor.com/4.17.1/basic/ckeditor.js"></script>
+@endpush
 
 @push('styles')
     <style>

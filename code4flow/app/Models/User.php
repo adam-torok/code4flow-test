@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -42,5 +43,13 @@ class User extends Authenticatable
 
     public function getName(){
         return $this->first_name . ' ' . $this->second_name;
+    }
+
+    public function getRegistrationDate(){
+        return $this->created_at->diffForHumans();
+    }
+
+    public function getVerificationDate(){
+        return $this->verified_at->diffForHumans();
     }
 }

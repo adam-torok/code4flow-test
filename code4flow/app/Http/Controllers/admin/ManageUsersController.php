@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\UpdateUserRequest;
 use App\Models\User;
+use Carbon\Carbon;
 
 class ManageUsersController extends Controller
 {
@@ -15,10 +16,10 @@ class ManageUsersController extends Controller
      */
     public function index()
     {
+        $newUsers = User::whereBetween('created_at', [Carbon::now()->subDays(5), Carbon::now()])->get();
         $users = User::paginate(10);
-        return view('admin.users.index',compact('users'));
+        return view('admin.users.index',compact('users', 'newUsers'));
     }
-
     /**
      * Display the specified resource.
      *

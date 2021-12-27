@@ -5,12 +5,14 @@ use App\Http\Controllers\admin\Auth\ForgotPasswordController;
 use App\Http\Controllers\admin\Auth\LoginController;
 use App\Http\Controllers\admin\Auth\VerificationController;
 use App\Http\Controllers\admin\HomeController;
+use App\Http\Controllers\admin\ManagePoemsController;
 use App\Http\Controllers\admin\ManageUsersController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('/', [HomeController::class, 'index'])->name('home');
     Route::resource('users', ManageUsersController::class);
+    Route::resource('poems', ManagePoemsController::class);
 });
 
 
