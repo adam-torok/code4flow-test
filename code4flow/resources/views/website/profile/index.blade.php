@@ -116,9 +116,7 @@
                                 name="note" 
                                 id="note"
                                 rows="3"
-                                title="Note">
-                                {{$user->note}}
-                            </textarea>
+                                title="Note">{{$user->note}}</textarea>
 
                             @error('note')
                             <span class="invalid-feedback" role="alert">

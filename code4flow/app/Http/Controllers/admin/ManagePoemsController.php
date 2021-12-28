@@ -18,8 +18,8 @@ class ManagePoemsController extends Controller
      */
     public function index()
     {
-        $newPoems = Poem::whereBetween('created_at', [Carbon::now()->subDays(5), Carbon::now()])->get();
-        $poems = Poem::paginate(10);
+        $newPoems = Poem::whereBetween('created_at', [Carbon::now()->subDays(5), Carbon::now()])->limit(5)->get();
+        $poems = Poem::all();
         return view('admin.poems.index',compact('poems', 'newPoems'));
     }
 

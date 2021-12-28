@@ -8,11 +8,10 @@
 @stop
 
 @section('content')
-
 @if(count($newPoems) > 0)
 <div class="row">
-    <div class="col-12">
-        <div class="card">
+    <div class="col-md-12">
+        <div class="card card-collapsed collapsed-card">
             <div class="card-header">
                 <h3 class="card-title">Új versek</h3>
                 <br>
@@ -80,11 +79,6 @@
                 </tbody>
             </table>
         </div>
-        @if(count($poems) > 10)
-        <div class="card-footer d-flex justify-content-center">
-            {{ $poems->links() }}
-        </div>
-        @endif
     </div>
 </div>
 @stop

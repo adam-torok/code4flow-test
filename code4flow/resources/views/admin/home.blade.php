@@ -10,7 +10,7 @@
 <div class="row">
     @if(count($newUsers) > 0)
     <div class="col-md-6">
-        <div class="card">
+        <div class="card card-collapsed collapsed-card">
             <div class="card-header">
                 <h3 class="card-title">Legújabb tagok</h3>
                 <br>
@@ -38,7 +38,7 @@
 
     @if(count($newPoems) > 0)
     <div class="col-md-6">
-        <div class="card">
+        <div class="card card-collapsed collapsed-card">
             <div class="card-header">
                 <h3 class="card-title">Legújabb versek</h3>
                 <br>

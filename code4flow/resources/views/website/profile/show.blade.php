@@ -63,9 +63,7 @@
                             style="height: auto!important"
                             disabled
                             class="form-control" 
-                            rows="3">
-                            {{$user->note}}
-                        </textarea>
+                            rows="3">{{$user->note}}</textarea>
                     </div>
                 </div>
 

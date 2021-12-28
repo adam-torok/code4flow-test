@@ -8,6 +8,7 @@
 @stop
 
 @section('content')
+@if($reports)
 <div class="row col">
     <div class="card col-12 p-md-4">
         <div class="table-responsive">
@@ -46,4 +47,5 @@
         </div>
     </div>
 </div>
+@endif
 @stop

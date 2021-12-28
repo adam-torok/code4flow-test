@@ -17,7 +17,7 @@ class ManageUsersController extends Controller
     public function index()
     {
         $newUsers = User::whereBetween('created_at', [Carbon::now()->subDays(5), Carbon::now()])->get();
-        $users = User::paginate(10);
+        $users = User::all();
         return view('admin.users.index',compact('users', 'newUsers'));
     }
     /**
