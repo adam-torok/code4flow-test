@@ -30,6 +30,11 @@ class PoemController extends Controller
      */
     public function create()
     {
+        $user = Auth::user();
+        if($user->isDisabled()){
+            toast()->success('Fiókod felvan függesztve!','Sajnálatos módon fiókodat felgüggesztettük. Ez idő alatt nem hothatsz létre új verseket!');
+            return redirect()->route('user-poems.index');
+        }
         $categories = Category::all();
         return view('website.poems.create',compact('categories'));
     }

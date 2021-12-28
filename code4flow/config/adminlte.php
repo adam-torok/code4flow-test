@@ -240,7 +240,7 @@ return [
 
         [
             'text'        => 'Bejelentések',
-            'url'         => 'admin/pages',
+            'url'         => 'admin/reports',
             'icon'        => 'fas fa-fw mr-2 fa-bug',
         ],
     ],

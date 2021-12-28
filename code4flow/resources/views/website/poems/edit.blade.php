@@ -21,12 +21,19 @@
         <div class="col-md-8 col-12 shadow-sm border-0 card p-5 offset-md-2">
 
             <div class="d-flex justify-content-between align-items-center">
+                @if($poem->isWaiting())
                 <div>
                     <h1>Vers szerkesztése</h1>
                     <small>Az adminisztrátor jóváhagyását követően megjelenik a verseskötetben</small>
                     <br>
                     <small>Utolsó modosításod dátuma: {{$poem->updated_at}}</small>
                 </div>
+                @else
+                <div>
+                    <h1>Vers megtekintése</h1>
+                    <small>Már elfogadott, illetve elutasított verset nem tudsz szerkeszteni!</small>
+                </div>
+                @endif
             </div>
 
             <div class="row mt-4">
@@ -40,6 +47,9 @@
                             <div class="col-12 col-md-6">
                                 <label for="title"><b>Cím *</b></label>
                                 <input 
+                                    @if($poem->isApproved() || $poem->isDeclined())
+                                        disabled
+                                    @endif
                                     type="text"
                                     class="form-control @error('title') is-invalid @enderror"
                                     name="title"
@@ -58,6 +68,9 @@
                             <div class="col-12 col-md-6">
                                 <label for="category"><b>Vers kategóriája *</b></label>
                                 <select 
+                                    @if($poem->isApproved() || $poem->isDeclined())
+                                        disabled
+                                    @endif
                                     class="form-control @error('category') is-invalid @enderror"
                                     name="category"
                                     id="category"
@@ -78,6 +91,9 @@
                             <div class="col-12">
                                 <label for="text"><b>Vers szövege *</b></label>
                                 <textarea 
+                                    @if($poem->isApproved() || $poem->isDeclined())
+                                        disabled
+                                    @endif
                                     name="text" 
                                     id="content">{{$poem->text}}
                                 </textarea>
@@ -89,12 +105,15 @@
                             </div>
                         </div>
 
+                        @if($poem->isWaiting())
                         <div class="form-group mt-2">
                             <div class="col-xs-12 text-center ">
                                 <br>
                                 <button class="btn btn-primary" type="submit">Mentés</button>
                             </div>
                         </div>
+                        @endif
+                        
                     </form>
                 </div>
             </div>

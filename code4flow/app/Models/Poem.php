@@ -68,7 +68,7 @@ class Poem extends Model
 
     public function getStatusTemplated(){
         if($this->isDeclined()){
-            return '<span class="right badge badge-dangers">Elutasítva</span>';
+            return '<span class="right badge badge-danger">Elutasítva</span>';
         }
         if($this->isWaiting()){
             return '<span class="right badge badge-warning">Várakozik</span>';

@@ -31,7 +31,8 @@
             </div>
 
             <div class="col-12">
-                <form class="form" action="{{ route('profile.update') }}" method="POST">
+                <form class="form" action="{{ route('profile.update',$user) }}" method="POST">
+                    @method('PATCH')
                     @csrf
                     <div class="row">
 
@@ -199,7 +200,7 @@
                     </div>
                 </form>
 
-                <form action="{{route('profile.delete')}}" method="POST">
+                <form action="{{route('profile.destroy',$user->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
                     <div class="form-group mt-4">

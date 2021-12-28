@@ -74,9 +74,7 @@
                     <label for="text"><b>Vers szövege *</b></label>
                     <textarea
                         name="text"
-                        id="content">
-                        {{$poem->text}}
-                    </textarea>
+                        id="content">{{$poem->text}}</textarea>
                     @error('text')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -119,7 +117,6 @@
 @endsection
 
 @push('js')
-@include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 <script src="//cdn.ckeditor.com/4.17.1/basic/ckeditor.js"></script>
 
 <script>

@@ -20,7 +20,7 @@ class ProfileController extends Controller
         $user->fill($request->all());
         $user->save();
         toast()->success('Sikeres profilmódosítás','Sikeresen módosítottad a profilodat!');
-        return redirect()->route('profile');
+        return redirect()->route('profile.index');
     }
 
     public function show($id){

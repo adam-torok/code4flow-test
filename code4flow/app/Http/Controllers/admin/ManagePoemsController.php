@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\UpdatePoemRequest;
 use App\Models\Category;
 use App\Models\Poem;
+use App\Notifications\PoemStatusChange;
 use Carbon\Carbon;
 
 class ManagePoemsController extends Controller
@@ -47,20 +48,21 @@ class ManagePoemsController extends Controller
         $poem = Poem::findOrFail($id);
         $poem->fill($request->all());
         $poem->category_id = $request->category;
+
         switch ($request->status) {
             case 'WAITING':
                 $poem->status = $poem->setWaiting();
                 break;
-
             case 'APPROVED':
                     $poem->status = $poem->setApproved();
                     break;
-
             case 'DECLINED':
                 $poem->status = $poem->setDeclined();
                 break;
-
         }
+
+        $user = $poem->user;
+        $user->notify((new PoemStatusChange($poem)));
         $poem->save();
         alert()->success('Sikeresen szerkesztetted '. $poem->title . ' verset');
         return redirect()->route('admin:poems.edit',$poem->id);

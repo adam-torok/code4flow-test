@@ -16,7 +16,7 @@ class Report extends Model
     ];
 
     const STATUS_WAITING = 'WAITING';
-    const STATUS_APPROVED = 'APPROVED';
+    const STATUS_RESOLVED = 'RESOLVED';
     const STATUS_DECLINED = 'DECLINED';
 
     public function user(){
@@ -24,11 +24,11 @@ class Report extends Model
     }
 
     public function response(){
-        return $this->hasMany(ReportResponse::class);
+        return $this->hasOne(ReportResponse::class, 'report_id');
     }
 
-    public function isApproved(){
-        return $this->status === self::STATUS_APPROVED;
+    public function isResolved(){
+        return $this->status === self::STATUS_RESOLVED;
     }
 
     public function isWaiting(){
@@ -38,4 +38,49 @@ class Report extends Model
     public function isDeclined(){
         return $this->status === self::STATUS_DECLINED;
     }
+
+    public function getSubmittedDate(){
+        return $this->created_at->diffForHumans();
+    }
+
+    public function getModificationDate(){
+        return $this->updated_at->diffForHumans();
+    }
+
+    public function setResolved(){
+        return $this->status = self::STATUS_RESOLVED;
+    }
+
+    public function setWaiting(){
+        return $this->status = self::STATUS_WAITING;
+    }
+
+    public function setDeclined(){
+        return $this->status = self::STATUS_DECLINED;
+    }
+
+    public function getStatus(){
+        if($this->isDeclined()){
+            return 'Elutasítva';
+        }
+        if($this->isWaiting()){
+            return 'Várakozik';
+        }
+        if($this->isResolved()){
+            return 'Javítva';
+        }
+    }
+
+    public function getStatusTemplated(){
+        if($this->isDeclined()){
+            return '<span class="badge bg-danger">Elutasítva</span>';
+        }
+        if($this->isWaiting()){
+            return '<span class="badge bg-warning">Várakozik</span>';
+        }
+        if($this->isResolved()){
+            return '<span class="badge bg-success">Javítva</span>';
+        }
+    }
+
 }

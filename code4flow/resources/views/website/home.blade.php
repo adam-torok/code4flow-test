@@ -42,7 +42,7 @@
                                     </blockquote>
                                     <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
                                         <div class="col-12 col-md-auto text-center text-md-start">
-                                            <img class="source-profile" src="images/profiles/profile-1.png" alt="image">
+                                            <img class="source-profile rounded-circle" src="http://ssl.gstatic.com/accounts/ui/avatar_1x.png" alt="image">
                                         </div>
                                         <div class="col source-info text-center text-md-start">
                                             <div class="source-name">Teszt Elek</div>
@@ -57,11 +57,11 @@
                                     </blockquote>
                                     <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
                                         <div class="col-12 col-md-auto text-center text-md-start">
-                                            <img class="source-profile" src="images/profiles/profile-2.png" alt="image">
+                                            <img class="source-profile rounded-circle" src="http://ssl.gstatic.com/accounts/ui/avatar_1x.png" alt="image">
                                         </div>
                                         <div class="col source-info text-center text-md-start">
                                             <div class="source-name">Jean Doe</div>
-                                            <div class="soure-title">Co-Founder, Startup Week</div>
+                                            <div class="soure-title">Lelkes kezdő költő</div>
                                         </div>
                                     </div>
                                 </div>
@@ -71,11 +71,11 @@
                                     </blockquote>
                                     <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
                                         <div class="col-12 col-md-auto text-center text-md-start">
-                                            <img class="source-profile" src="images/profiles/profile-3.png" alt="image">
+                                            <img class="source-profile rounded-circle" src="http://ssl.gstatic.com/accounts/ui/avatar_1x.png" alt="image">
                                         </div>
                                         <div class="col source-info text-center text-md-start">
                                             <div class="source-name">Andy Doe</div>
-                                            <div class="soure-title">Frontend Developer, Company Lorem</div>
+                                            <div class="soure-title">Lelkes kezdő költő</div>
                                         </div>
                                     </div>
                                 </div>
@@ -181,102 +181,31 @@
         </div>
     </div>
 </section>
-
+@if(count($poems))
 <section id="reviews-section" class="reviews-section py-5">
     <div class="container">
         <h2 class="section-heading text-center" data-aos="fade-up">Vers ízelítők</h2>
         <div class="section-intro text-center single-col-max mx-auto mb-5" data-aos="fade-up-right">Nézd meg, mit írnak felhasználóink </div>
         <div class="row justify-content-center">
-            <div class="item col-12 col-lg-4 p-3 mb-4">
-                <div data-aos="zoom-in" class="item-inner theme-bg-light rounded p-4">
-
-                    <blockquote class="quote">
-                        "Kiváló versek! Aliquam euismod nunc porta urna facilisis tempor. "
-                    </blockquote>
-                    <div class="source row gx-md-3 gy-3 gy-md-0">
-                        <div class="col-12 col-md-auto text-center text-md-start">
-                            <img class="source-profile" src="images/profiles/profile-1.png" alt="image">
-                        </div>
-                        <div class="col source-info text-center text-md-start">
-                            <div class="source-name">Teszt Elek</div>
-                            <div class="soure-title">Könyvfanatikus</div>
-                        </div>
-                    </div>
-                    <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
-                </div>
-            </div>
+            @foreach ($poems as $poem)
             <div data-aos="zoom-in" class="item col-12 col-lg-4 p-3 mb-4">
                 <div class="item-inner theme-bg-light rounded p-4">
-                    <blockquote class="quote">
-                        "Nagyon tetszik! Aliquam euismod nunc porta urna facilisis tempor. Praesent mauris neque."
+                    <blockquote class="quote text-center">
+                        {!!Str::limit($poem->text, 150, $end='...')!!}
                     </blockquote>
-                    <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
+                    <div style="max-width: 200px" class="source m-auto row gx-md-3 gy-3 gy-md-0 d-flex justify-content-center align-items-center">
                         <div class="col-12 col-md-auto text-center text-md-start">
-                            <img class="source-profile" src="images/profiles/profile-2.png" alt="image">
+                            <img class="source-profile rounded-circle" src="http://ssl.gstatic.com/accounts/ui/avatar_1x.png" alt="image">
                         </div>
-                        <div class="col source-info text-center text-md-start">
-                            <div class="source-name">Teszt Anna</div>
-                            <div class="soure-title">Könyv kritikus</div>
-                        </div>
-                    </div>
-
-                    <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
-                </div>
-            </div>
-            <div data-aos="zoom-in" class="item col-12 col-lg-4 p-3 mb-4">
-                <div class="item-inner theme-bg-light rounded p-4">
-                    <blockquote class="quote">
-                        "Nagyon jó a közösség adipiscing elit. Pellentesque ac leo turpis. Phasellus imperdiet id ligula
-                        tempor imperdiet."
-                    </blockquote>
-                    <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
-                        <div class="col-12 col-md-auto text-center text-md-start">
-                            <img class="source-profile" src="images/profiles/profile-3.png" alt="image">
-                        </div>
-                        <div class="col source-info text-center text-md-start">
-                            <div class="source-name">Teszt Tamás</div>
-                            <div class="soure-title">Könyv kritikus</div>
+                        <div class="col source-info d-flex align-items-center flex-column justify-content-center text-center text-md-start">
+                            <div class="source-name">{{$poem->user->getName()}}</div>
+                            <div class="soure-title">{{$poem->user->title}}</div>
                         </div>
                     </div>
                     <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
                 </div>
             </div>
-            <div data-aos="zoom-in" class="item col-12 col-lg-4 p-3 mb-4">
-                <div class="item-inner theme-bg-light rounded p-4">
-                    <blockquote class="quote">
-                        "Populáris adipiscing elit. Pellentesque ac leo turpis. Phasellus imperdiet id ligula tempor
-                        imperdiet."
-                    </blockquote>
-                    <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
-                        <div class="col-12 col-md-auto text-center text-md-start">
-                            <img class="source-profile" src="images/profiles/profile-4.png" alt="image">
-                        </div>
-                        <div class="col source-info text-center text-md-start">
-                            <div class="source-name">Teszt Edina</div>
-                            <div class="soure-title">Könyvfanatikus</div>
-                        </div>
-                    </div>
-                    <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
-                </div>
-            </div>
-            <div data-aos="zoom-in" class="item col-12 col-lg-4 p-3 mb-4">
-                <div class="item-inner theme-bg-light rounded p-4">
-                    <blockquote class="quote">
-                        "Végre here consectetur adipiscing elit. Pellentesque ac leo turpis. Phasellus imperdiet id
-                        ligula tempor imperdiet."
-                    </blockquote>
-                    <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
-                        <div class="col-12 col-md-auto text-center text-md-start">
-                            <img class="source-profile" src="images/profiles/profile-5.png" alt="image">
-                        </div>
-                        <div class="col source-info text-center text-md-start">
-                            <div class="source-name">Teszt Béla</div>
-                            <div class="soure-title">Kezdő író, költő</div>
-                        </div>
-                    </div>
-                    <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
-                </div>
-            </div>
+            @endforeach
         </div>
         @guest
         <div class="text-center">
@@ -285,6 +214,7 @@
         @endguest
     </div>
 </section>
+@endif
 
 <section id="author-section" class="author-section section theme-bg-primary py-5">
     <div class="container py-3">

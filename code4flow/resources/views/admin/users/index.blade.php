@@ -46,6 +46,7 @@
                         <th>Azonosító</th>
                         <th>Regisztráció dátuma</th>
                         <th>Név</th>
+                        <th>Státusz</th>
                         <th>Email</th>
                     </tr>
                 </thead>
@@ -60,6 +61,9 @@
                             <div>
                                 <strong>{{$user->first_name}} {{$user->second_name}}</strong>
                             </div>
+                        </td>
+                        <td>
+                            {!!$user->getStatusTemplated()!!}
                         </td>
                         <td>
                             {{$user->email}}

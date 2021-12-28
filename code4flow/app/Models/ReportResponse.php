@@ -9,6 +9,8 @@ class ReportResponse extends Model
 {
     use HasFactory;
 
+    protected $table = 'report_responses';
+
     protected $fillable = [
         'text',
         'report_id',
@@ -16,5 +18,9 @@ class ReportResponse extends Model
 
     public function report(){
         return $this->belongsTo(Report::class);
+    }
+
+    public function getSubmittedDate(){
+        return $this->created_at->diffForHumans();
     }
 }

@@ -24,11 +24,11 @@
                                 <div class="icon-holder"><i class="fas fa-quote-right"></i></div>
                                 <div class="source justify-content-center text-center row gx-md-3 gy-3 gy-md-0 align-items-center">
                                     <div class="col-12 col-md-auto text-center text-md-start">
-                                        <img class="source-profile" src="images/profiles/profile-2.png" alt="image">
+                                        <img class="source-profile rounded-circle" src="http://ssl.gstatic.com/accounts/ui/avatar_1x.png" alt="image">
                                     </div>
                                     <div class="col source-info text-center text-md-start">
                                         <div class="source-name"><a class="text-dark" href="{{route('profile.show',$poem->user->id)}}">{{$poem->user->getName()}}</a></div>
-                                        <div class="soure-title">Könyv kritikus</div>
+                                        <div class="soure-title">{{$poem->user->title}}</div>
                                     </div>
                                 </div>
                             </div>

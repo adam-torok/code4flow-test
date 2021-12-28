@@ -59,9 +59,10 @@
                 <table id="dattable" class="display stripe table" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Bejelentés azonosító</th>
+                            <th>Azonosító</th>
                             <th>Cím</th>
-                            <th>Bejelentés dátuma</th>
+                            <th>Dátum</th>
+                            <th>Státusz</th>
                         </tr>
                     </thead>
                     <tbody class="mt-4">
@@ -70,6 +71,7 @@
                                 <td>{{$report->id}}</td>
                                 <td>{{$report->title}}</td>
                                 <td>{{$report->created_at}}</td>
+                                <td>{!!$report->getStatusTemplated()!!}</td>
                             </tr>   
                         @endforeach
                     </tbody>

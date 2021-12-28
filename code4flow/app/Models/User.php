@@ -59,4 +59,16 @@ class User extends Authenticatable
     public function getModificationDate(){
         return $this->updated_at->diffForHumans();
     }
+
+    public function isDisabled(){
+        return $this->is_disabled;
+    }
+
+    public function getStatusTemplated(){
+        if($this->isDisabled()){
+            return '<span class="right badge badge-danger">Felfüggesztve</span>';
+        }else{
+            return '<span class="right badge badge-success">Engedélyezett</span>';
+        }
+    }
 }

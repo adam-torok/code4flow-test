@@ -11,8 +11,6 @@
 @stop
 
 @section('content')
-
-
 <section class="content">
     <div class="container-fluid">
         <div class="row">
@@ -26,7 +24,22 @@
                                 <b>Versek száma</b> <a class="float-right">{{count($user->poems)}}</a>
                             </li>
                         </ul>
-                        <a href="#" class="btn btn-danger btn-block"><b>Fiók felfüggesztése</b></a>
+                        <a href="{{route('admin:toggle-user', $user->id)}}" 
+                            class="
+                            @if($user->isDisabled())
+                                btn-success
+                                @else 
+                                btn-danger
+                                @endif
+                                btn  btn-block">
+                            <b>
+                                @if($user->isDisabled())
+                                    Fiók engedélyezése
+                                @else 
+                                    Fiók felfüggesztése
+                                @endif
+                            </b>
+                        </a>
                     </div>
                 </div>
 
@@ -132,8 +145,8 @@
                         <table class="table">
                             <thead class="thead-light">
                                 <tr>
-                                    <th>Típus</th>
                                     <th>Cím</th>
+                                    <th>Típus</th>
                                     <th>Létrehozás dátuma</th>
                                     <th>Státusz</th>
                                 </tr>
@@ -160,10 +173,4 @@
         </div>
     </div>
 </section>
-
-
 @endsection
-
-@push('js')
-@include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
-@endpush

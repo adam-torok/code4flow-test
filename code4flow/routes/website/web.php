@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\website\Auth\ConfirmPasswordController;
 use App\Http\Controllers\website\Auth\ForgotPasswordController;
+use App\Http\Controllers\website\Auth\ResetPasswordController;
 use App\Http\Controllers\website\Auth\LoginController;
 use App\Http\Controllers\website\Auth\RegisterController;
 use App\Http\Controllers\website\Auth\VerificationController;
@@ -14,16 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('landing');
 
+Route::get('/notifications', [HomeController::class, 'showNotifications'])->name('notifications');
+Route::get('/notifications/delete', [HomeController::class, 'deleteNotifications'])->name('notifications.delete');
+
 Route::get('/poems', [HomeController::class, 'poems'])->name('poems');
 Route::resource('user-poems', PoemController::class);
 Route::resource('reports', ReportController::class);
-
-// Notification center routes
-
-Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
-Route::post('/profile', [ProfileController::class, 'update'])->name('profile.update');
-Route::get('/profile/{id}', [ProfileController::class, 'show'])->name('profile.show');
-Route::delete('/profile/delete', [ProfileController::class, 'delete'])->name('profile.delete');
+Route::resource('profile', ProfileController::class);
 
 // Authentication Routes...
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');

@@ -55,7 +55,6 @@ class ManageUsersController extends Controller
     {
         $user = User::findOrFail($id);
         $user->fill($request->all());
-        //$user->is_disabled = $request->is_disabled;
         $user->save();
         alert()->success('Sikeresen szerkesztetted '. $user->second_name . ' profilját');
         return redirect()->route('admin:users.show',$id);
@@ -72,6 +71,16 @@ class ManageUsersController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
         alert()->success('Sikeresen törölted '. $user->second_name . ' profilját');
-        return redirect()->route('admin:users.index',$id);
+        return redirect()->route('admin:users.index');
+    }
+
+
+    // Enable or disable user
+    public function toggleUser($id){
+        $user = User::findOrFail($id);
+        $user->isDisabled() ? $user->is_disabled = false : $user->is_disabled = true;
+        $user->save();
+        alert()->success('Sikeresen módosítottad '. $user->second_name . ' profilját');
+        return redirect()->route('admin:users.show',$id);
     }
 }
