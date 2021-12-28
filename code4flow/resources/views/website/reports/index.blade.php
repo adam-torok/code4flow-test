@@ -45,16 +45,13 @@
 
 <div class="row p-md-5 mt-md-5">
     <div class="col-md-8 col-12 shadow-sm border-0 card p-5 offset-md-2">
-
         <div class="row text-center mb-4">
             <div class="d-flex mb-4 justify-content-between">
                 <h1>Bejelentéseid</h1>
                 <a href="{{route('reports.create')}}" class="btn btn-dark">Bejelentés létrehozása</a>
             </div>
         </div>
-
         <div class="row">
-
             <div class="col-12">
                 <table id="dattable" class="display stripe table" style="width:100%">
                     <thead>

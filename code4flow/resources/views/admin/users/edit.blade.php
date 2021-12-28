@@ -15,7 +15,6 @@
             <h2 class="h5 mb-0">Szerkesztés</h2>
         </div>
         <div class="card-body">
-
             <form method="POST" action="{{route('admin:users.update',$user)}}">
                 @method('PATCH')
                 @csrf
@@ -175,21 +174,18 @@
                     </tr>
                     </tbody>
                 </table>
-
-                <small class="text-muted"><b>Utolsó módosítás dátuma {{$user->getModificationDate()}}</b></small>
-
+                <small class="text-muted">
+                    <b>Utolsó módosítás dátuma {{$user->getModificationDate()}}</b>
+                </small>
                 <div class="col-12 mt-4 d-flex justify-content-between">
                     <button class="btn btn-primary" type="submit">Mentés</button>
                 </div>
-
             </form>
-
             <form id="delete-form" method="POST" action="{{route('admin:users.destroy', $user->id)}}">
                 @method('DELETE')
                 @csrf
                 <button type="submit" class="d-flex align-items-center btn btn-sm ml-auto btn-danger">Törlés</button>
             </form>
-
         </div>
     </div>
 @endsection

@@ -40,7 +40,6 @@
                     @endforeach
                 </ul>
             </div>
-
         </div>
     </div>
 </div>
@@ -89,27 +88,3 @@
     </div>
 </div>
 @stop
-
-@section('css')
-<link rel="stylesheet" href="/css/admin_custom.css">
-@stop
-
-@push('js')
-@include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
-<script>
-    $(document).ready(function() {
-            $('#table').dataTable();
-        } );
-
-        $(function () {
-            $('tr[data-route]').on('click', function (e) {
-
-                if ($(e.target).is('input') || $(e.target).is('label') || $(e.target).hasClass('btn')) {
-                    return;
-                }
-
-                window.location = $(this).data('route');
-            });
-        });
-</script>
-@endpush

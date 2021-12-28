@@ -10,11 +10,9 @@
                     <h1 class="headline mb-3 animated bounceIn delay-2">
                         Kezdő költők klubbja <br>
                     </h1>
-                    
                     <div class="animated fadeIn  subheadline mb-4">
                         Éld ki kreativitásod &amp; szerezz hírnevet
                     </div>
-                    
                     @guest
                     <div class="cta-holder row gx-md-3 gy-3 gy-md-0">
                         <div class="col-12 col-md-auto">
@@ -25,7 +23,6 @@
                         </div>
                     </div>
                     @endguest
-
                     <div class="hero-quotes mt-5">
                         <div id="quotes-carousel" class="quotes-carousel carousel slide carousel-fade mb-5"
                             data-bs-ride="carousel" data-bs-interval="8000">
@@ -34,7 +31,6 @@
                                 <li data-bs-target="#quotes-carousel" data-bs-slide-to="1"></li>
                                 <li data-bs-target="#quotes-carousel" data-bs-slide-to="2"></li>
                             </ol>
-
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
                                     <blockquote class="quote p-4 theme-bg-light">
@@ -42,7 +38,8 @@
                                     </blockquote>
                                     <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
                                         <div class="col-12 col-md-auto text-center text-md-start">
-                                            <img class="source-profile rounded-circle" src="http://ssl.gstatic.com/accounts/ui/avatar_1x.png" alt="image">
+                                            <img class="source-profile rounded-circle"
+                                                src="http://ssl.gstatic.com/accounts/ui/avatar_1x.png" alt="image">
                                         </div>
                                         <div class="col source-info text-center text-md-start">
                                             <div class="source-name">Teszt Elek</div>
@@ -57,7 +54,8 @@
                                     </blockquote>
                                     <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
                                         <div class="col-12 col-md-auto text-center text-md-start">
-                                            <img class="source-profile rounded-circle" src="http://ssl.gstatic.com/accounts/ui/avatar_1x.png" alt="image">
+                                            <img class="source-profile rounded-circle"
+                                                src="http://ssl.gstatic.com/accounts/ui/avatar_1x.png" alt="image">
                                         </div>
                                         <div class="col source-info text-center text-md-start">
                                             <div class="source-name">Jean Doe</div>
@@ -71,7 +69,8 @@
                                     </blockquote>
                                     <div class="source row gx-md-3 gy-3 gy-md-0 align-items-center">
                                         <div class="col-12 col-md-auto text-center text-md-start">
-                                            <img class="source-profile rounded-circle" src="http://ssl.gstatic.com/accounts/ui/avatar_1x.png" alt="image">
+                                            <img class="source-profile rounded-circle"
+                                                src="http://ssl.gstatic.com/accounts/ui/avatar_1x.png" alt="image">
                                         </div>
                                         <div class="col source-info text-center text-md-start">
                                             <div class="source-name">Andy Doe</div>
@@ -185,7 +184,8 @@
 <section id="reviews-section" class="reviews-section py-5">
     <div class="container">
         <h2 class="section-heading text-center" data-aos="fade-up">Vers ízelítők</h2>
-        <div class="section-intro text-center single-col-max mx-auto mb-5" data-aos="fade-up-right">Nézd meg, mit írnak felhasználóink </div>
+        <div class="section-intro text-center single-col-max mx-auto mb-5" data-aos="fade-up-right">Nézd meg, mit írnak
+            felhasználóink </div>
         <div class="row justify-content-center">
             @foreach ($poems as $poem)
             <div data-aos="zoom-in" class="item col-12 col-lg-4 p-3 mb-4">
@@ -193,11 +193,14 @@
                     <blockquote class="quote text-center">
                         {!!Str::limit($poem->text, 150, $end='...')!!}
                     </blockquote>
-                    <div style="max-width: 200px" class="source m-auto row gx-md-3 gy-3 gy-md-0 d-flex justify-content-center align-items-center">
+                    <div style="max-width: 200px"
+                        class="source m-auto row gx-md-3 gy-3 gy-md-0 d-flex justify-content-center align-items-center">
                         <div class="col-12 col-md-auto text-center text-md-start">
-                            <img class="source-profile rounded-circle" src="http://ssl.gstatic.com/accounts/ui/avatar_1x.png" alt="image">
+                            <img class="source-profile rounded-circle"
+                                src="http://ssl.gstatic.com/accounts/ui/avatar_1x.png" alt="image">
                         </div>
-                        <div class="col source-info d-flex align-items-center flex-column justify-content-center text-center text-md-start">
+                        <div
+                            class="col source-info d-flex align-items-center flex-column justify-content-center text-center text-md-start">
                             <div class="source-name">{{$poem->user->getName()}}</div>
                             <div class="soure-title">{{$poem->user->title}}</div>
                         </div>

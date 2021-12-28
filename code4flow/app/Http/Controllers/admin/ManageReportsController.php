@@ -39,8 +39,6 @@ class ManageReportsController extends Controller
         }
 
         $report->user->notify(new ReportStatusChange($report));
-
-        // Save a response
         $report->response()->updateOrCreate([],['report_id' => $report->id, 'text' => trim($request->response)]);
 
         $report->save();

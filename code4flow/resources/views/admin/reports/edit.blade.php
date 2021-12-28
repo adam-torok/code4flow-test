@@ -8,7 +8,6 @@
     .ck-content {
         min-height: 200px;
     }
-
     select {
         padding: 0 !important;
         padding-left: 15px !important;
@@ -20,16 +19,16 @@
 <div class="card mt-2 @if($report->isWaiting())card-warning @endif @if($report->isDeclined()) card-danger @endif @if($report->isResolved()) card-success @endif">
     <div class="card-header">
         <div class="ml-auto user-block">
-            <span class="username ml-auto"><a href="{{route('admin:users.show',$report->user->id)}}">{{$report->user->getName()}}</a></span>
+            <span class="username ml-auto">
+                <a href="{{route('admin:users.show',$report->user->id)}}">{{$report->user->getName()}}</a>
+            </span>
             <span class="description ml-auto mt-1 text-white">Megosztotta - {{$report->getSubmittedDate()}}</span>
         </div>
     </div>
     <div class="card-body">
-
         <form method="POST" action="{{route('admin:reports.update',$report)}}">
             @method('PATCH')
             @csrf
-
             <div class="row">
                 <div class="col-12 col-md-6">
                     <label for="title">Bejelentés címe</label>
@@ -96,9 +95,7 @@
                     @enderror
                 </div>
             </div>
-
             <small class="text-muted"><b>Utolsó módosítás dátuma {{$report->getModificationDate()}}</b></small>
-
             <div class="col-12 mt-4 d-flex justify-content-between">
                 <button class="btn btn-primary" type="submit">Mentés</button>
             </div>
@@ -111,7 +108,6 @@
         </form>
     </div>
 </div>
-
 @endsection
 
 @push('js')

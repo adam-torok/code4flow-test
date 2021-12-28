@@ -6,6 +6,21 @@
 
 const pageNavLinks = document.querySelectorAll('.scrollto');
 
+$(document).ready(function() {
+	$('#table').dataTable();
+} );
+
+$(function () {
+	$('tr[data-route]').on('click', function (e) {
+
+		if ($(e.target).is('input') || $(e.target).is('label') || $(e.target).hasClass('btn')) {
+			return;
+		}
+
+		window.location = $(this).data('route');
+	});
+});
+
 pageNavLinks.forEach((pageNavLink) => {
 	
 	pageNavLink.addEventListener('click', (e) => {

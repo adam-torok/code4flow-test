@@ -11,14 +11,11 @@
                     <small>Ha úgy látod, felfedeztél egy hibát az oldalon kérlek jelentsd nekünk, és mi minnél előbb megoldjuk!</small>
                 </div>
             </div>
-
             <div class="row mt-4">
-
                 <div class="col-12">
                     <form class="form" action="{{ route('reports.store') }}" method="POST">
                         @csrf
                         <div class="row">
-
                             <div class="col-12 col-md-12">
                                 <label for="title"><b>Probléma megnevezése röviden *</b></label>
                                 <input 
@@ -36,7 +33,6 @@
                                 </span>
                                 @enderror
                             </div>
-
                         </div>
                         <div class="row mt-4">
                             <div class="col-12">
@@ -57,9 +53,7 @@
                             </div>
                         </div>
                         <br>
-                        
                         <small>Sikeres elküldést követően, az adminisztrátor választ fog küldeni 2-3 munkanapon belül</small>
-
                         <div class="form-group mt-2">
                             <div class="col-xs-12 text-center ">
                                 <br>

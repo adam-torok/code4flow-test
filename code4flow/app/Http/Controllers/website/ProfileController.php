@@ -28,7 +28,7 @@ class ProfileController extends Controller
         return view('website.profile.show', compact('user'));
     }
 
-    public function delete(){
+    public function destroy(){
         $user = Auth::user();
         $user->poems()->delete();
         $user->delete();

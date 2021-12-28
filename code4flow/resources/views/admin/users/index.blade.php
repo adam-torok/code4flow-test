@@ -36,7 +36,6 @@
     </div>
 </div>
 @endif
-
 <div class="row">
     <div class="card col-12 p-md-4">
         <div class="table-responsive">
@@ -81,23 +80,3 @@
     </div>
 </div>
 @stop
-
-@push('js')
-@include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
-<script>
-    $(document).ready(function() {
-            $('#table').dataTable();
-        } );
-
-        $(function () {
-            $('tr[data-route]').on('click', function (e) {
-
-                if ($(e.target).is('input') || $(e.target).is('label') || $(e.target).hasClass('btn')) {
-                    return;
-                }
-
-                window.location = $(this).data('route');
-            });
-        });
-</script>
-@endpush

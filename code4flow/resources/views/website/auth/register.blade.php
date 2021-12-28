@@ -6,14 +6,11 @@
         <div class="col-md-8">
             <div class="card shadow-sm border-0">
                 <div class="card-header py-3 border-0">Első lépéseid</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('register.submit') }}">
                         @csrf
-
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-right">Email cím</label>
-
                             <div class="col-md-6">
                                 <input 
                                     id="email"
@@ -32,10 +29,8 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Keresztnév</label>
-
                             <div class="col-md-6">
                                 <input 
                                     id="name"
@@ -50,14 +45,11 @@
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-
                                 @enderror
                             </div>
                         </div>
-
                         <div class="row mb-3">
                             <label for="second_name" class="col-md-4 col-form-label text-md-right">Vezetéknév</label>
-
                             <div class="col-md-6">
                                 <input 
                                     id="second_name"
@@ -73,10 +65,8 @@
                                 @enderror
                             </div>
                         </div>
-
                         <div class="row mb-3">
                             <label for="city" class="col-md-4 col-form-label text-md-right">Helység</label>
-
                             <div class="col-12 pb-4 pb-md-0 col-md-2">
                                 <input 
                                     name="city"
@@ -117,11 +107,8 @@
                                 @enderror
                             </div>
                         </div>
-
-
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-right">Jelszó</label>
-
                             <div class="col-md-6">
                                 <input 
                                     id="password" 
@@ -130,7 +117,6 @@
                                     name="password"
                                     placeholder="Add meg a jelszódat"
                                     autocomplete="new-password">
-
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -139,7 +125,6 @@
                                 <small class="text-center d-block">Lehetőleg erős jelszót válassz! 😉</small>
                             </div>
                         </div>
-
                         <div class="row mb-3">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">
                                 Jelszó mégegyszer
@@ -154,7 +139,6 @@
                                 autocomplete="new-password">
                             </div>
                         </div>
-
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4 text-center">
                                 <button type="submit" class="btn btn-primary">

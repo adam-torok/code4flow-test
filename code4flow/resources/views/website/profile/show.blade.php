@@ -1,7 +1,6 @@
 @extends('layouts.website.app')
 
 @section('content')
-
 <div class="row p-md-5 mt-md-5">
     <div class="col-md-8 col-12 shadow-sm border-0 card p-5 offset-md-2">
         <div class="row text-center mb-4">
@@ -132,7 +131,6 @@
                 speed="1" style="width: 100%; height: auto;" loop autoplay></lottie-player>
         </div>
         @endif
-
     </div>
 </div>
 @endsection

@@ -8,7 +8,6 @@
 @stop
 
 @section('content')
-
 <div class="row col">
     <div class="card col-12 p-md-4">
         <div class="table-responsive">
@@ -48,22 +47,3 @@
     </div>
 </div>
 @stop
-
-@push('js')
-<script>
-    $(document).ready(function() {
-            $('#table').dataTable();
-        } );
-
-        $(function () {
-            $('tr[data-route]').on('click', function (e) {
-
-                if ($(e.target).is('input') || $(e.target).is('label') || $(e.target).hasClass('btn')) {
-                    return;
-                }
-
-                window.location = $(this).data('route');
-            });
-        });
-</script>
-@endpush

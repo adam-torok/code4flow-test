@@ -11,7 +11,6 @@
                 @endforeach
             </div>
             @endif
-
             <div class="d-flex justify-content-between align-items-center">
                 <div>
                     @if($report->isResolved() || $report->isDeclined())
@@ -24,15 +23,12 @@
                     @endif
                 </div>
             </div>
-
             <div class="row mt-4">
-
                 <div class="col-12">
                     <form class="form" action="{{ route('reports.update', $report->id) }}" method="POST">
                         @csrf
                         @method('PATCH')
                         <div class="row">
-
                             <div class="col-12 col-md-12">
                                 <label for="title"><b>Probléma megnevezése röviden *</b></label>
                                 <input 
@@ -53,7 +49,6 @@
                                 </span>
                                 @enderror
                             </div>
-
                         </div>
                         <div class="row mt-4">
                             <div class="col-12">
@@ -74,7 +69,6 @@
                                 @enderror
                             </div>
                         </div>
-                        
                         @if($report->isResolved() || $report->isDeclined())
                             <div class="mt-2">
                                 <b class="text-dark">A probléma állapota: 
@@ -90,7 +84,6 @@
                         </div>
                         @endif
                     </form>
-
                     <form action="{{route('reports.destroy', $report->id)}}">
                         @csrf
                         @method('DELETE')

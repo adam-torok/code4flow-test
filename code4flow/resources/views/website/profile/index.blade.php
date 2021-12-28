@@ -1,7 +1,6 @@
 @extends('layouts.website.app')
 
 @section('content')
-
 <div class="row p-md-5 mt-md-5">
     <div class="col-md-8 col-12 shadow-sm border-0 card p-5 offset-md-2">
         <div class="row text-center mb-4">
@@ -35,9 +34,7 @@
                     @method('PATCH')
                     @csrf
                     <div class="row">
-
                         <h4>Személyes</h4>
-
                         <div class="col-6">
                             <label for="first_name"><b>Keresztnév *</b></label>
                             <input 
@@ -134,9 +131,7 @@
                     <hr>
 
                     <div class="row mt-2">
-
                         <h4>Lakhely</h4>
-
                         <div class="col-4">
                             <label for="city"><b>Város *</b></label>
                             <input 
@@ -190,7 +185,6 @@
                             @enderror
                         </div>
                     </div>
-
 
                     <div class="form-group mt-4">
                         <div class="col-xs-12 text-center ">

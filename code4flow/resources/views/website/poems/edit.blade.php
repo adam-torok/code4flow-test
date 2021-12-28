@@ -19,7 +19,6 @@
 <section class="container mt-4">
     <div class="row p-md-5">
         <div class="col-md-8 col-12 shadow-sm border-0 card p-5 offset-md-2">
-
             <div class="d-flex justify-content-between align-items-center">
                 @if($poem->isWaiting())
                 <div>
@@ -37,13 +36,11 @@
             </div>
 
             <div class="row mt-4">
-
                 <div class="col-12">
                     <form class="form" action="{{ route('user-poems.update', $poem) }}" method="POST">
                         @csrf
                         @method('PATCH')
                         <div class="row">
-
                             <div class="col-12 col-md-6">
                                 <label for="title"><b>Cím *</b></label>
                                 <input 
@@ -85,7 +82,6 @@
                                 </span>
                                 @enderror
                             </div>
-
                         </div>
                         <div class="row mt-4">
                             <div class="col-12">
@@ -104,7 +100,6 @@
                                 @enderror
                             </div>
                         </div>
-
                         @if($poem->isWaiting())
                         <div class="form-group mt-2">
                             <div class="col-xs-12 text-center ">
@@ -113,7 +108,6 @@
                             </div>
                         </div>
                         @endif
-                        
                     </form>
                 </div>
             </div>

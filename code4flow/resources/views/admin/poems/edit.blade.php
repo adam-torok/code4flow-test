@@ -8,7 +8,6 @@
     .ck-content {
         min-height: 200px;
     }
-
     select {
         padding: 0 !important;
         padding-left: 15px !important;
@@ -25,11 +24,9 @@
         </div>
     </div>
     <div class="card-body">
-
         <form method="POST" action="{{route('admin:poems.update',$poem)}}">
             @method('PATCH')
             @csrf
-
             <div class="row">
                 <div class="col-12 col-md-6">
                     <label for="title">Vers címe</label>
@@ -98,9 +95,7 @@
                     @enderror
                 </div>
             </div>
-
             <small class="text-muted"><b>Utolsó módosítás dátuma {{$poem->getModificationDate()}}</b></small>
-
             <div class="col-12 mt-4 d-flex justify-content-between">
                 <button class="btn btn-primary" type="submit">Mentés</button>
             </div>
