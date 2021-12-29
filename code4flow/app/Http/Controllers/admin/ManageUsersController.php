@@ -16,8 +16,8 @@ class ManageUsersController extends Controller
      */
     public function index()
     {
-        $newUsers = User::whereBetween('created_at', [Carbon::now()->subDays(5), Carbon::now()])->get();
-        $users = User::all()->sortBy("created_at",null,true);
+        $newUsers = User::whereBetween('created_at', [Carbon::now()->subDays(5), Carbon::now()])->orderBy('created_at','desc')->get();
+        $users = User::orderBy('created_at','desc')->get();
         return view('admin.users.index',compact('users', 'newUsers'));
     }
     /**

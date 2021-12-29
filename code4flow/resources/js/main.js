@@ -8,6 +8,27 @@ const pageNavLinks = document.querySelectorAll('.scrollto');
 
 $(document).ready(function() {
 	$('#table').dataTable({
+		"language" : {
+			"paginate": {
+				"first":      "Első",
+				"last":       "Utolsó",
+				"next":       "Következő",
+				"previous":   "Előző",
+			},
+		"decimal":        "",
+		"emptyTable":     "A táblázat üres.",
+		"info":           "Jelenleg _START_ től _END_ ig láthatsz az összes _TOTAL_ rekordból",
+		"infoEmpty":      "Mutass 0 to 0 of 0 rekordot",
+		"infoFiltered":   "(filtered from _MAX_ total entries)",
+		"infoPostFix":    "",
+		"thousands":      ",",
+		"lengthMenu":     "Mutass _MENU_ rekordot",
+		"loadingRecords": "Betöltés...",
+		"processing":     "Feldolgozás...",
+		"search":         "Keresés:",
+		"zeroRecords":    "Sajnos nem találtunk",
+		},
+		"order": [[ 0, "desc" ]]
 	});
 } );
 

@@ -3,16 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 class PoemFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
-
     public $poems = [
         'Itt születtem, itt élek, és itt halok meg!
         Csak egy kérdés: mi fáj?!
@@ -73,13 +66,32 @@ class PoemFactory extends Factory
         ne próbálkozz vele, igen kigyúrt idom.'
         ];
 
-        public function definition(){
-            return [
-                'user_id' => $this->faker->numberBetween(1,20),
-                'title' => $this->faker->text(15),
-                'text' => $this->faker->randomElement($this->poems),
-                'status' => $this->faker->randomElement(['APPROVED', 'DECLINED', 'WAITING']),
-                'category_id' => $this->faker->numberBetween(1,6)
-            ];
+    public $poemTitles = [
+        'Sámándobok menete',
+        'Kamu barátok',
+        'Ne álmodj olyat, mit el nem érsz',
+        'Húzás',
+        'Búcsú nélkül',
+        'A barátok',
+        'Mert gondoltatok rám',
+        'Magányosak',
+        'Frici kuvasz, 13. Waka',
+        'Ha találkoznánk',
+        'Van egy kisleány',
+        'Köszönöm Neked',
+        'Egy asszony',
+        'A remény',
+        'Kellesz nékem',
+        'Arannyal, gyémánttal',
+    ];
+
+    public function definition(){
+        return [
+            'user_id' => $this->faker->numberBetween(1,20),
+            'title' => $this->faker->randomElement($this->poemTitles),
+            'text' => $this->faker->randomElement($this->poems),
+            'status' => $this->faker->randomElement(['APPROVED', 'DECLINED', 'WAITING']),
+            'category_id' => $this->faker->numberBetween(1,6)
+        ];
     }
 }

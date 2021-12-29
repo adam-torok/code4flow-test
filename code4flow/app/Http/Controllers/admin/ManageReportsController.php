@@ -5,14 +5,13 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\admin\UpdateReportRequest;
 use App\Models\Report;
-use App\Models\ReportResponse;
 use App\Notifications\ReportStatusChange;
 use Illuminate\Http\Request;
 
 class ManageReportsController extends Controller
 {
     public function index(){
-        $reports = Report::all();
+        $reports = Report::orderBy('created_at','desc')->get();
         return view('admin.reports.index', compact('reports'));
     }
 

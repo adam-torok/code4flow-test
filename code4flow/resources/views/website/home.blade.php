@@ -1,7 +1,6 @@
 @extends('layouts.website.app')
 
 @section('content')
-
 <section class="hero-section pt-4 mt-4">
     <div class="container">
         <div class="row">
@@ -180,6 +179,7 @@
         </div>
     </div>
 </section>
+
 @if(count($poems))
 <section id="reviews-section" class="reviews-section py-5">
     <div class="container">
