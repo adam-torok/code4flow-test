@@ -3,7 +3,7 @@
 ## Setting up the project:
 
 1. make a new .env file, than copy the .env.example into that file
-2. add your mailtrap user to .env --- IMPORTANT for admin crud
+2. add your mailtrap user to .env and set a MAIL_FROM_ADDRESS --- IMPORTANT for admin crud
 3. run command: 'composer install'
 4. run command: 'php artisan key:generate' 
 5. run command: 'npm install'
@@ -63,5 +63,10 @@
                     and also to respond to the user with a short message like 'we are working on it! thank you'. If you write a respond, the user will get notified
                     via email and notification
 - Delete report - deletes a report
+
+## KNOWN BUGS
+
+- If you first login into a user account, you cannot reach admin auth routes
+        FIX: log out from user account
 
 
