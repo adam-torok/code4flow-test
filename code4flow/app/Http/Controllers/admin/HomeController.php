@@ -23,8 +23,8 @@ class HomeController extends Controller
 
     public function index()
     {
-        $newPoems = Poem::whereBetween('created_at', [Carbon::now()->subDays(5), Carbon::now()])->limit(25)->get();
-        $newUsers = User::whereBetween('created_at', [Carbon::now()->subDays(5), Carbon::now()])->limit(25)->get();
+        $newPoems = Poem::whereBetween('created_at', [Carbon::now()->subDays(5), Carbon::now()])->get();
+        $newUsers = User::whereBetween('created_at', [Carbon::now()->subDays(5), Carbon::now()])->get();
 
         $users = User::all();
         $poems = Poem::all();

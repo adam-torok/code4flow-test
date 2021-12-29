@@ -77,7 +77,7 @@
                 <h3>{{count($reports)}}</h3>
                 <p>Bejelentések száma</p>
             </div>
-            <a href="#" class="small-box-footer">Több információ <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{route('admin:reports.index')}}" class="small-box-footer">Több információ <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <div class="col-lg-4 col-6">
@@ -86,7 +86,7 @@
                 <h3>{{count($poems)}}</h3>
                 <p>Versek száma</p>
             </div>
-            <a href="#" class="small-box-footer">Több információ <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{route('admin:poems.index')}}" class="small-box-footer">Több információ <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <div class="col-lg-4 col-6">
@@ -95,7 +95,7 @@
                 <h3>{{count($users)}}</h3>
                 <p>Regisztrált felhasználó</p>
             </div>
-            <a href="#" class="small-box-footer">Több információ <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{route('admin:users.index')}}" class="small-box-footer">Több információ <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
 </div>

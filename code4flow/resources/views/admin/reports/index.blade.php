@@ -20,6 +20,7 @@
                         <th>Dátum</th>
                         <th>Státusz</th>
                         <th>Létrehozó</th>
+                        <th>Szerkesztés</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,6 +40,9 @@
                         </td>
                         <td>
                             {{$report->user->getName()}}
+                        </td>
+                        <td>
+                            <a href="{{route('admin:reports.edit', $report)}}"><i class="fas fa-edit"></i></a>
                         </td>
                     </tr>
                     @endforeach

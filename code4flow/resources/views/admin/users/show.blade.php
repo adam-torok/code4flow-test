@@ -87,14 +87,6 @@
                                     <td>{{$user->email}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Email megerősítve</td>
-                                    <td>@if($user->email_verified_at)
-                                            {{ $user->getVerificationDate() }}
-                                        @else
-                                            - 
-                                        @endif</td>
-                                </tr>
-                                <tr>
                                     <td>Regisztrált</td>
                                     <td>{{ $user->created_at->format('Y.m.d H:i') }}</td>
                                 </tr>

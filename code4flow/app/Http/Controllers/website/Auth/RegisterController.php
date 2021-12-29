@@ -55,9 +55,7 @@ class RegisterController extends Controller
             return $response;
         }
 
-        return $request->wantsJson()
-            ? new JsonResponse([], 201)
-            : redirect('/');
+        return redirect('/');
     }
 
     protected function create(array $data)

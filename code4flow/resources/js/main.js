@@ -7,7 +7,8 @@
 const pageNavLinks = document.querySelectorAll('.scrollto');
 
 $(document).ready(function() {
-	$('#table').dataTable();
+	$('#table').dataTable({
+	});
 } );
 
 $(function () {

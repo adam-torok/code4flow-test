@@ -15,7 +15,7 @@ class PoemSeeder extends Seeder
     public function run()
     {
         Poem::factory()
-        ->count(50)
+        ->count(40)
         ->create();
     }
 }

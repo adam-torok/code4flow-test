@@ -42,9 +42,7 @@
                                     name="text" 
                                     rows="5" 
                                     class="form-control @error('text') is-invalid @enderror" 
-                                    id="text">
-                                    {{old('text')}}
-                                </textarea>
+                                    id="text">{{old('text')}}</textarea>
                                 @error('text')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

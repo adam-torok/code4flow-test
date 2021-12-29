@@ -137,6 +137,11 @@
                                 name="password_confirmation"
                                 placeholder="Add meg mégegyszer a jelszódat!"
                                 autocomplete="new-password">
+                                @error('password_confirmation')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
                             </div>
                         </div>
                         <div class="row mb-0">

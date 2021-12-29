@@ -47,6 +47,7 @@
                         <th>Név</th>
                         <th>Státusz</th>
                         <th>Email</th>
+                        <th>Szerkesztés</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -66,6 +67,9 @@
                         </td>
                         <td>
                             {{$user->email}}
+                        </td>
+                        <td>
+                            <a href="{{route('admin:users.show', $user)}}"><i class="fas fa-user-edit"></i></a>
                         </td>
                     </tr>
                     @endforeach

@@ -54,6 +54,7 @@
                         <th>Kategória</th>
                         <th>Státusz</th>
                         <th>Létrehozó</th>
+                        <th>Szerkesztés</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,6 +74,9 @@
                         </td>
                         <td>
                             {{$poem->user->getName()}}
+                        </td>
+                        <td>
+                            <a href="{{route('admin:poems.edit', $poem)}}"><i class="fas fa-edit"></i></a>
                         </td>
                     </tr>
                     @endforeach

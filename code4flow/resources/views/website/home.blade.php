@@ -223,7 +223,7 @@
     <div class="container py-3">
         <h2 class="section-heading text-center text-white mb-3">Miért készült ez az oldal?</h2>
         <div class="author-bio single-col-max mx-auto">
-            <p class="text-center">Portfólióba teljesen jó lesz</p>
+            <p class="text-center">Code4Flow test project</p>
         </div>
     </div>
 </section>

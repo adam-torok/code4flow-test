@@ -17,7 +17,7 @@ class ManageUsersController extends Controller
     public function index()
     {
         $newUsers = User::whereBetween('created_at', [Carbon::now()->subDays(5), Carbon::now()])->get();
-        $users = User::all();
+        $users = User::all()->sortBy("created_at",null,true);
         return view('admin.users.index',compact('users', 'newUsers'));
     }
     /**
@@ -70,10 +70,11 @@ class ManageUsersController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
+        $user->poems()->delete();
+        $user->reports()->delete();
         alert()->success('Sikeresen törölted '. $user->second_name . ' profilját');
         return redirect()->route('admin:users.index');
     }
-
 
     // Enable or disable user
     public function toggleUser($id){
